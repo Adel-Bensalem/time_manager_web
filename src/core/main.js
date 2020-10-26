@@ -1,8 +1,8 @@
-import { createAccountCreationInteractor } from "./useCases/createAccount"
+import { createGeneralManagerAccount } from "./useCases/createGeneralManagerAccount"
 
 function createCore(repository, presenter) {
     return {
-        createAccount: createAccountCreationInteractor(repository, presenter)
+        createGeneralManagerAccount: createGeneralManagerAccount(repository, presenter)
     }
 }
 

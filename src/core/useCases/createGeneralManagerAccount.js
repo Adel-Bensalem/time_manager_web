@@ -5,16 +5,16 @@ function isAccountCreationRequestValid(account) {
     return isAccountValid(account) && isPasswordConfirmationValid(account.password, account.passwordConfirmation);
 }
 
-function createAccountCreationInteractor(repository, presenter) {
+function createGeneralManagerAccount(repository, presenter) {
     return account => {
-        presenter.presentAccountCreationRequest();
+        presenter.presentGeneralManagerAccountCreationRequest();
 
         return isAccountCreationRequestValid(account) ?
             repository.saveAccount(account)
-                .then(presenter.presentAccountCreationSuccess)
-                .catch(presenter.presentAccountCreationFailure) :
-            presenter.presentAccountCreationFailure();
+                .then(presenter.presentGeneralManagerAccountCreationSuccess)
+                .catch(presenter.presentGeneralManagerAccountCreationFailure) :
+            presenter.presentGeneralManagerAccountCreationFailure();
     };
 }
 
-export { createAccountCreationInteractor };
+export { createGeneralManagerAccount };
