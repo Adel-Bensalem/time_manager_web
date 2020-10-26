@@ -1,14 +1,14 @@
 import {
-    isAccountCreationRequestPending,
-    isAccountCreationRequestSuccess,
-    isAccountCreationRequestFailure
-} from "./createAccount";
+    isGeneralManagerAccountCreationRequestPending,
+    isGeneralManagerAccountCreationRequestSuccess,
+    isGeneralManagerAccountCreationRequestFailure
+} from "./createGeneralManagerAccount";
 
 function createSelector(state) {
     return {
-        isAccountCreationRequestPending: isAccountCreationRequestPending(state.createAccount),
-        isAccountCreationRequestSuccess: isAccountCreationRequestSuccess(state.createAccount),
-        isAccountCreationRequestFailure: isAccountCreationRequestFailure(state.createAccount)
+        isGeneralManagerAccountCreationRequestPending: isGeneralManagerAccountCreationRequestPending(state.generalManagerAccountCreation),
+        isGeneralManagerAccountCreationRequestSuccess: isGeneralManagerAccountCreationRequestSuccess(state.generalManagerAccountCreation),
+        isGeneralManagerAccountCreationRequestFailure: isGeneralManagerAccountCreationRequestFailure(state.generalManagerAccountCreation)
     }
 }
 

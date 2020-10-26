@@ -1,6 +1,6 @@
 export {
-    accountCreationInitialState,
-    reduceAccountCreationRequestState,
-    reduceAccountCreationSuccessState,
-    reduceAccountCreationFailureState
-} from "./createAccount";
+    generalManagerAccountCreationInitialState,
+    reduceGeneralManagerAccountCreationRequestState,
+    reduceGeneralManagerAccountCreationSuccessState,
+    reduceGeneralManagerAccountCreationFailureState
+} from "./createGeneralManagerAccount";

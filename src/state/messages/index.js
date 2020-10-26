@@ -1,23 +1,23 @@
 import {
-    ACCOUNT_CREATION_REQUESTED,
-    ACCOUNT_CREATION_SUCCEEDED,
-    ACCOUNT_CREATION_FAILED,
-    dispatchAccountCreationRequest,
-    dispatchAccountCreationSuccess,
-    dispatchAccountCreationFailure
-} from "./createAccount"
+    GENERAL_MANAGER_ACCOUNT_CREATION_REQUESTED,
+    GENERAL_MANAGER_ACCOUNT_CREATION_SUCCEEDED,
+    GENERAL_MANAGER_ACCOUNT_CREATION_FAILED,
+    dispatchGeneralManagerAccountCreationRequest,
+    dispatchGeneralManagerAccountCreationSuccess,
+    dispatchGeneralManagerAccountCreationFailure
+} from "./createGeneralManagerAccount"
 
 const messages = {
-    ACCOUNT_CREATION_REQUESTED,
-    ACCOUNT_CREATION_SUCCEEDED,
-    ACCOUNT_CREATION_FAILED
+    GENERAL_MANAGER_ACCOUNT_CREATION_REQUESTED,
+    GENERAL_MANAGER_ACCOUNT_CREATION_SUCCEEDED,
+    GENERAL_MANAGER_ACCOUNT_CREATION_FAILED
 };
 
 function createMessageDispatcher(dispatch) {
     return {
-        dispatchAccountCreationRequest: dispatchAccountCreationRequest(dispatch),
-        dispatchAccountCreationSuccess: dispatchAccountCreationSuccess(dispatch),
-        dispatchAccountCreationFailure: dispatchAccountCreationFailure(dispatch),
+        dispatchGeneralManagerAccountCreationRequest: dispatchGeneralManagerAccountCreationRequest(dispatch),
+        dispatchGeneralManagerAccountCreationSuccess: dispatchGeneralManagerAccountCreationSuccess(dispatch),
+        dispatchGeneralManagerAccountCreationFailure: dispatchGeneralManagerAccountCreationFailure(dispatch),
     }
 }
 
