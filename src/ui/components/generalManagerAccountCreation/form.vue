@@ -60,6 +60,10 @@
     .form__input {
         flex: 1;
         font-size: 1.4rem;
+        border: 1px solid var(--color-black);
+        background-color: var(--color-white);
+        color: var(--color-black);
+        padding: 1rem 2rem;
     }
 
     .form__input:not(:last-child) {

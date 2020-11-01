@@ -56,10 +56,9 @@
     }
 
     .account-creation__button {
-        border-radius: 5px;
         color: var(--color-white);
-        padding: 6px 2rem;
-        font-size: 1.4rem;
+        padding: 1rem 3rem;
+        font-size: 1.6rem;
         border: 1px solid var(--color-white);
         background-color: var(--color-primary);
         cursor: pointer;
