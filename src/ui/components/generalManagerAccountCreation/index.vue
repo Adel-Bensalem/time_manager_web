@@ -3,7 +3,13 @@
         <div class="account-creation__form">
             <account-creation-form :data="formData" @edit-form="editGeneralManagerAccountCreationForm" />
         </div>
-        <button class="account-creation__button" @click="createGeneralManagerAccount">Send</button>
+        <button
+                class="account-creation__button"
+                :disabled="!canSubmitForm"
+                @click="createGeneralManagerAccount"
+        >
+            Send
+        </button>
     </div>
 </template>
 
@@ -61,6 +67,20 @@
         font-size: 1.6rem;
         border: 1px solid var(--color-white);
         background-color: var(--color-primary);
+        transition: color .4s, border .4s, background-color .4s;
         cursor: pointer;
+    }
+
+    .account-creation__button:hover {
+        color: var(--color-white);
+        border: 1px solid var(--color-black);
+        background-color: var(--color-black);
+    }
+
+    .account-creation__button:disabled {
+        color: var(--color-black);
+        border: 1px solid var(--color-black);
+        background-color: var(--color-white);
+        cursor: initial;
     }
 </style>
