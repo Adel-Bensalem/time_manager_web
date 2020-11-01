@@ -1,24 +1,11 @@
-import {createStore} from 'vuex';
-import {createMessageDispatcher, messages} from "./messages";
+import {createStore} from 'redux';
+
+import {createMessageDispatcher} from "./messages";
 import {createSelector} from "./selectors";
-import {
-    generalManagerAccountCreationInitialState,
-    reduceGeneralManagerAccountCreationFailureState,
-    reduceGeneralManagerAccountCreationRequestState,
-    reduceGeneralManagerAccountCreationSuccessState,
-} from "./transitions";
+import { reduceState } from "./transitions";
 
 function createState() {
-    return createStore({
-        state: {
-            generalManagerAccountCreation: generalManagerAccountCreationInitialState
-        },
-        mutations: {
-            [messages.GENERAL_MANAGER_ACCOUNT_CREATION_REQUESTED]: reduceGeneralManagerAccountCreationRequestState,
-            [messages.GENERAL_MANAGER_ACCOUNT_CREATION_SUCCEEDED]: reduceGeneralManagerAccountCreationSuccessState,
-            [messages.GENERAL_MANAGER_ACCOUNT_CREATION_FAILED]: reduceGeneralManagerAccountCreationFailureState,
-        }
-    });
+    return createStore(reduceState);
 }
 
 export {createState, createMessageDispatcher, createSelector};

@@ -1,15 +1,31 @@
 import {
     isGeneralManagerAccountCreationRequestPending,
     isGeneralManagerAccountCreationRequestSuccess,
-    isGeneralManagerAccountCreationRequestFailure
+    isGeneralManagerAccountCreationRequestFailure,
 } from "./createGeneralManagerAccount";
+import {
+    getGeneralManagerAccountCreationFormData,
+    canSubmitGeneralManagerAccountCreationForm
+} from "./editGeneralManagerAccountCreationForm"
 
-function createSelector(state) {
+function createSelector(getState) {
     return {
-        isGeneralManagerAccountCreationRequestPending: isGeneralManagerAccountCreationRequestPending(state.generalManagerAccountCreation),
-        isGeneralManagerAccountCreationRequestSuccess: isGeneralManagerAccountCreationRequestSuccess(state.generalManagerAccountCreation),
-        isGeneralManagerAccountCreationRequestFailure: isGeneralManagerAccountCreationRequestFailure(state.generalManagerAccountCreation)
+        isGeneralManagerAccountCreationRequestPending: isGeneralManagerAccountCreationRequestPending(
+            () => getState().generalManagerAccountCreation
+        ),
+        isGeneralManagerAccountCreationRequestSuccess: isGeneralManagerAccountCreationRequestSuccess(
+            () => getState().generalManagerAccountCreation
+        ),
+        isGeneralManagerAccountCreationRequestFailure: isGeneralManagerAccountCreationRequestFailure(
+            () => getState().generalManagerAccountCreation
+        ),
+        getGeneralManagerAccountCreationFormData: getGeneralManagerAccountCreationFormData(
+            () => getState().generalManagerAccountCreationFormEdition
+        ),
+        canSubmitGeneralManagerAccountCreationForm: canSubmitGeneralManagerAccountCreationForm(
+            () => getState().generalManagerAccountCreationFormEdition
+        ),
     }
 }
 
-export { createSelector };
+export {createSelector};

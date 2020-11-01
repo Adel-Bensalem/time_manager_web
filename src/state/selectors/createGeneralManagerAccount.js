@@ -1,14 +1,14 @@
 
-function isGeneralManagerAccountCreationRequestPending(state) {
-    return () => state.isRequestPending
+function isGeneralManagerAccountCreationRequestPending(getState) {
+    return () => getState().isRequestPending
 }
 
-function isGeneralManagerAccountCreationRequestSuccess(state) {
-    return () => state.isRequestSuccessful
+function isGeneralManagerAccountCreationRequestSuccess(getState) {
+    return () => getState().isRequestSuccessful
 }
 
-function isGeneralManagerAccountCreationRequestFailure(state) {
-    return () => state.isRequestFailure
+function isGeneralManagerAccountCreationRequestFailure(getState) {
+    return () => getState().isRequestFailure
 }
 
 export {
