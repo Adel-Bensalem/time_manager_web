@@ -3,7 +3,7 @@ import axios from "axios";
 function sendRequest(endpoint, method, data) {
     const requestData = method === "GET" ? {params: data} : {data};
 
-    return new Promise < Response > ((resolve, reject) =>
+    return new Promise((resolve, reject) =>
             axios({
                 url: endpoint,
                 method,
