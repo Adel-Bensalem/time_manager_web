@@ -12,13 +12,23 @@
 
     export default {
         name: "GeneralManagerAccountCreation",
+        emits: [
+            "edit-general-manager-account-creation-form",
+            "create-general-manager-account",
+        ],
         props: {
             formData: {
                 email: String,
                 fullName: String,
                 password: String,
                 passwordConfirmation: String
-            }
+            },
+            request: {
+                isPending: Boolean,
+                isSuccess: Boolean,
+                isFailure: Boolean,
+            },
+            canSubmitForm: Boolean
         },
         components: { 'account-creation-form': Form },
         methods: {
@@ -46,12 +56,12 @@
     }
 
     .account-creation__button {
-        border: none;
         border-radius: 5px;
-        color: #fafafa;
+        color: var(--color-white);
         padding: 6px 2rem;
         font-size: 1.4rem;
-        background-image: linear-gradient(to right bottom, #42b983, #2e9567);
+        border: 1px solid var(--color-white);
+        background-color: var(--color-primary);
         cursor: pointer;
     }
 </style>
