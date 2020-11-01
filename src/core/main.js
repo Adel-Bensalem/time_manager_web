@@ -4,7 +4,7 @@ import { editGeneralManagerAccountCreationForm } from "./useCases/editGeneralMan
 function createCore(repository, presenter) {
     return {
         createGeneralManagerAccount: createGeneralManagerAccount(repository, presenter),
-        editGeneralManagerAccountCreationForm: editGeneralManagerAccountCreationForm(repository, presenter)
+        editGeneralManagerAccountCreationForm: editGeneralManagerAccountCreationForm(presenter)
     }
 }
 

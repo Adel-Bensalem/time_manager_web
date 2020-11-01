@@ -6,7 +6,7 @@ function isRequestValid(account) {
     return isAccountValid(account) && isPasswordConfirmationValid(account.password, account.passwordConfirmation);
 }
 
-function editGeneralManagerAccountCreationForm(repository, presenter) {
+function editGeneralManagerAccountCreationForm(presenter) {
     return account => {
         presenter.presentGeneralManagerAccountCreationFormEditionRequest(account);
 

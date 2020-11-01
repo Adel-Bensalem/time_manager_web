@@ -10,7 +10,7 @@ function createGeneralManagerAccount(repository, presenter) {
         presenter.presentGeneralManagerAccountCreationRequest();
 
         return isAccountCreationRequestValid(account) ?
-            repository.saveGeneralManagerAccountAccount(account)
+            repository.saveGeneralManagerAccount(account)
                 .then(presenter.presentGeneralManagerAccountCreationSuccess)
                 .catch(presenter.presentGeneralManagerAccountCreationFailure) :
             presenter.presentGeneralManagerAccountCreationFailure();
