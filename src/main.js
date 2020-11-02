@@ -5,6 +5,7 @@ import { createServices } from "./services/main";
 import { createState, createMessageDispatcher, createSelector } from "./state/main";
 import { sendRequest } from "./tools/sendRequest";
 import { createDispatcherToPresenterAdapter } from "./tools/dispatcherToPresenterAdapter";
+import { start, retrieve, exist } from "./tools/session";
 
 import App from './ui/App.vue'
 import router from './ui/router'
@@ -15,7 +16,9 @@ const messageDispatcher = createMessageDispatcher(state.dispatch);
 const selector = createSelector(state.getState);
 const core = createCore(
     services,
-    createDispatcherToPresenterAdapter(messageDispatcher)
+    createDispatcherToPresenterAdapter(messageDispatcher),
+    services,
+    { start, retrieve, exist }
 );
 
 createApp(App)

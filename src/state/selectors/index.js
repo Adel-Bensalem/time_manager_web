@@ -6,7 +6,12 @@ import {
 import {
     getGeneralManagerAccountCreationFormData,
     canSubmitGeneralManagerAccountCreationForm
-} from "./editGeneralManagerAccountCreationForm"
+} from "./editGeneralManagerAccountCreationForm";
+import {
+    isAuthenticationRequestPending,
+    isAuthenticationRequestSuccess,
+    isAuthenticationRequestFailure
+} from "./authenticate";
 
 function createSelector(getState) {
     return {
@@ -24,6 +29,15 @@ function createSelector(getState) {
         ),
         canSubmitGeneralManagerAccountCreationForm: canSubmitGeneralManagerAccountCreationForm(
             () => getState().generalManagerAccountCreationFormEdition
+        ),
+        isAuthenticationRequestPending: isAuthenticationRequestPending(
+            () => getState().authentication
+        ),
+        isAuthenticationRequestSuccess: isAuthenticationRequestSuccess(
+            () => getState().authentication
+        ),
+        isAuthenticationRequestFailure: isAuthenticationRequestFailure(
+            () => getState().authentication
         ),
     }
 }

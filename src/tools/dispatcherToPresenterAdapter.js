@@ -7,6 +7,9 @@ function createDispatcherToPresenterAdapter(messageDispatcher) {
         presentGeneralManagerAccountCreationFormEditionRequest: messageDispatcher.dispatchGeneralManagerAccountCreationFormEditionRequest,
         presentGeneralManagerAccountCreationFormEditionSuccess: messageDispatcher.dispatchGeneralManagerAccountCreationFormEditionSuccess,
         presentGeneralManagerAccountCreationFormEditionFailure: messageDispatcher.dispatchGeneralManagerAccountCreationFormEditionFailure,
+        presentAuthenticationRequest: messageDispatcher.dispatchAuthenticationRequest,
+        presentAuthenticationSuccess: messageDispatcher.dispatchAuthenticationSuccess,
+        presentAuthenticationFailure: messageDispatcher.dispatchAuthenticationFailure,
     }
 }
 

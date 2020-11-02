@@ -8,4 +8,8 @@ function createState() {
     return createStore(reduceState);
 }
 
-export {createState, createMessageDispatcher, createSelector};
+export {
+    createState,
+    createMessageDispatcher,
+    createSelector,
+};
