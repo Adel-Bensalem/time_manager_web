@@ -12,6 +12,10 @@ import {
     isAuthenticationRequestSuccess,
     isAuthenticationRequestFailure
 } from "./authenticate";
+import {
+    getAuthenticationFormEditionFormData,
+    canSubmitAuthenticationFormEditionForm
+} from "./editAuthenticationForm";
 
 function createSelector(getState) {
     return {
@@ -38,6 +42,12 @@ function createSelector(getState) {
         ),
         isAuthenticationRequestFailure: isAuthenticationRequestFailure(
             () => getState().authentication
+        ),
+        getAuthenticationFormEditionFormData: getAuthenticationFormEditionFormData(
+            () => getState().authenticationFormEdition
+        ),
+        canSubmitAuthenticationFormEditionForm: canSubmitAuthenticationFormEditionForm(
+            () => getState().authenticationFormEdition
         ),
     }
 }

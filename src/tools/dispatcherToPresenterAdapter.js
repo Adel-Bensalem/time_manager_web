@@ -10,6 +10,8 @@ function createDispatcherToPresenterAdapter(messageDispatcher) {
         presentAuthenticationRequest: messageDispatcher.dispatchAuthenticationRequest,
         presentAuthenticationSuccess: messageDispatcher.dispatchAuthenticationSuccess,
         presentAuthenticationFailure: messageDispatcher.dispatchAuthenticationFailure,
+        presentAuthenticationFormEditionSuccess: messageDispatcher.dispatchAuthenticationFormEditionSuccess,
+        presentAuthenticationFormEditionFailure: messageDispatcher.dispatchAuthenticationFormEditionFailure,
     }
 }
 

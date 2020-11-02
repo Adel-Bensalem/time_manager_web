@@ -2,6 +2,19 @@
   <router-view />
 </template>
 
+<script>
+  export default {
+    data() {
+      return {
+        canRenderApp: false,
+      }
+    },
+    beforeCreate() {
+      this.core.authenticate({});
+    }
+  }
+</script>
+
 <style>
   *,
   *::after,
