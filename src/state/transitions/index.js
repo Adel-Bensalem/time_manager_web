@@ -4,6 +4,7 @@ import { reduceGeneralManagerAccountCreationFormEditionState } from "./editGener
 import { reduceAuthenticationState } from "./authenticate";
 import { reduceAuthenticationFormFormEditionState } from "./editAuthenticationForm";
 import { reduceSessionDecodeState } from "./decodeSession";
+import { reduceSessionState } from "./session";
 
 const reduceState = combineReducers({
     generalManagerAccountCreation: reduceGeneralManagerAccountCreationState,
@@ -11,6 +12,7 @@ const reduceState = combineReducers({
     authentication: reduceAuthenticationState,
     authenticationFormEdition: reduceAuthenticationFormFormEditionState,
     sessionDecode: reduceSessionDecodeState,
+    session: reduceSessionState,
 });
 
 export { reduceState };

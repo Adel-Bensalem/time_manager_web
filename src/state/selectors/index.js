@@ -21,6 +21,10 @@ import {
     isSessionDecodeRequestSuccess,
     isSessionDecodeRequestFailure
 } from "./decodeSession";
+import {
+    hasSession,
+    getSession
+} from "./session";
 
 function createSelector(getState) {
     return {
@@ -63,6 +67,8 @@ function createSelector(getState) {
         isSessionDecodeRequestFailure: isSessionDecodeRequestFailure(
             () => getState().sessionDecode
         ),
+        hasSession: hasSession(() => getState().session),
+        getSession: getSession(() => getState().session),
     }
 }
 
