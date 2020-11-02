@@ -1,6 +1,32 @@
 <template>
-  <router-view />
+  <div class="app">
+    <router-view v-if="canRenderApp" />
+    <div class="app__loader" v-else>
+      <loader />
+    </div>
+  </div>
 </template>
+
+<script>
+  import Loader from "./components/loader";
+
+  export default {
+    components: { loader: Loader },
+    data() {
+      return {
+        canRenderApp: false,
+      }
+    },
+    beforeCreate() {
+      this.subscribeToStore(() => {
+        this.canRenderApp = !this.selector.isSessionDecodeRequestPending();
+      });
+    },
+    created() {
+      this.core.decodeSession();
+    }
+  }
+</script>
 
 <style>
   *,
@@ -41,5 +67,18 @@
     --color-primary: #42b983;
     --color-white: #fff;
     --color-black: #2c3e50;
+  }
+
+  .app {
+    height: 100%;
+  }
+
+  .app__loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 10vw;
+    width: 10vw;
   }
 </style>
