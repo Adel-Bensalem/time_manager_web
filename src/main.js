@@ -18,7 +18,8 @@ const core = createCore(
     services,
     createDispatcherToPresenterAdapter(messageDispatcher),
     services,
-    { start, retrieve, exist }
+    { start, retrieve, exist },
+    { decode: services.decodeToken }
 );
 
 createApp(App)
