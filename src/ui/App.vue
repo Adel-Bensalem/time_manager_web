@@ -10,7 +10,7 @@
       }
     },
     beforeCreate() {
-      this.core.authenticate({});
+      this.core.decodeSession();
     }
   }
 </script>

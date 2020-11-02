@@ -16,6 +16,11 @@ import {
     getAuthenticationFormEditionFormData,
     canSubmitAuthenticationFormEditionForm
 } from "./editAuthenticationForm";
+import {
+    isSessionDecodeRequestPending,
+    isSessionDecodeRequestSuccess,
+    isSessionDecodeRequestFailure
+} from "./decodeSession";
 
 function createSelector(getState) {
     return {
@@ -48,6 +53,15 @@ function createSelector(getState) {
         ),
         canSubmitAuthenticationFormEditionForm: canSubmitAuthenticationFormEditionForm(
             () => getState().authenticationFormEdition
+        ),
+        isSessionDecodeRequestPending: isSessionDecodeRequestPending(
+            () => getState().sessionDecode
+        ),
+        isSessionDecodeRequestSuccess: isSessionDecodeRequestSuccess(
+            () => getState().sessionDecode
+        ),
+        isSessionDecodeRequestFailure: isSessionDecodeRequestFailure(
+            () => getState().sessionDecode
         ),
     }
 }
