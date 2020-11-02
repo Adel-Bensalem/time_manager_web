@@ -1,5 +1,5 @@
 function start(data) {
-    sessionStorage.setItem("session", data);
+    sessionStorage.setItem("session", JSON.stringify(data));
 
     return data;
 }
@@ -9,7 +9,7 @@ function exist() {
 }
 
 function retrieve() {
-    return !!sessionStorage.getItem("session");
+    return !!sessionStorage.getItem("session") && JSON.parse(sessionStorage.getItem("session"));
 }
 
 export {
