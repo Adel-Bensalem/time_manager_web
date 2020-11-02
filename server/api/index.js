@@ -1,20 +1,23 @@
 const router = require("express").Router();
 
 router.post(
-    "/authenticate",
+    "/authentication",
     (req, res) => res.status(200).send({
         token: "This is a fake token, it's useless"
-    }));
+    })
+);
 
 router.get(
-    "/authenticate",
+    "/authentication",
     (req, res) => res.status(200).send({
-        account: { fullName: "John Doe", email: "john.doe@test.test" },
+        fullName: "John Doe",
+        email: "john.doe@test.test",
         role: {
             isGeneralManager: true,
             isManager: false,
             isEmployee: false
-        },
-    }));
+        }
+    })
+);
 
 module.exports = router;

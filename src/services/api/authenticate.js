@@ -1,10 +1,10 @@
 
 function authenticate(sendRequest) {
-    return credentials => sendRequest("/api/authenticate/", 'POST', credentials);
+    return credentials => sendRequest("/api/authentication/", 'POST', credentials);
 }
 
 function decodeToken(sendRequest) {
-    return token => sendRequest("/api/authenticate/", 'GET', token)
+    return token => sendRequest("/api/authentication/", 'GET', token)
 }
 
 export { authenticate, decodeToken };
