@@ -8,7 +8,6 @@ import { createDispatcherToPresenterAdapter } from "./tools/dispatcherToPresente
 import { start, retrieve, exist } from "./tools/session";
 
 import App from './ui/App.vue'
-import router from './ui/router'
 
 const services = createServices(sendRequest);
 const state = createState();
@@ -29,9 +28,8 @@ createApp(App)
                 this.core = core;
                 this.messageDispatcher = messageDispatcher;
                 this.selector = selector;
-                this.subscribeToStore = (callSubscriber) => state.subscribe(() => callSubscriber());
+                this.subscribeToStore = (callSubscriber) => state.subscribe(callSubscriber);
             }
         });
     })
-    .use(router)
     .mount('#app');

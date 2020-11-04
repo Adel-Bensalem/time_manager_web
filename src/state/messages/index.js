@@ -38,9 +38,7 @@ import {
 } from "./decodeSession";
 import {
     LOCATION_CHANGED,
-    LOCATIONS_REGISTERED,
     dispatchLocationChange,
-    dispatchLocationsRegistration
 } from "./location";
 
 const messages = {
@@ -59,7 +57,6 @@ const messages = {
     SESSION_DECODE_SUCCEEDED,
     SESSION_DECODE_FAILED,
     LOCATION_CHANGED,
-    LOCATIONS_REGISTERED,
 };
 
 function createMessageDispatcher(dispatch) {
@@ -79,7 +76,6 @@ function createMessageDispatcher(dispatch) {
         dispatchSessionDecodeSuccess: dispatchSessionDecodeSuccess(dispatch),
         dispatchSessionDecodeFailure: dispatchSessionDecodeFailure(dispatch),
         dispatchLocationChange: dispatchLocationChange(dispatch),
-        dispatchLocationsRegistration: dispatchLocationsRegistration(dispatch),
     }
 }
 

@@ -1,17 +1,18 @@
 <template>
   <div class="app">
-    <router-view v-if="canRenderApp" />
+    <Router v-if="canRenderApp" />
     <div class="app__loader" v-else>
-      <loader />
+      <Loader />
     </div>
   </div>
 </template>
 
 <script>
   import Loader from "./components/loader";
+  import Router from "./components/router";
 
   export default {
-    components: { loader: Loader },
+    components: { Loader, Router },
     data() {
       return {
         canRenderApp: false,
