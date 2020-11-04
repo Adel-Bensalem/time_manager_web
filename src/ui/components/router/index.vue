@@ -21,13 +21,14 @@
             getRoutes() {
                 return this.selector.hasSession() ?
                     [
+                        { component: Landing, path: "/" }
                     ] :
                     [
                         { component: Landing, path: "/" }
                     ]
             },
             updateRoute() {
-                const currentRoute = this.getRoutes().find(({ path }) => path === this.selector.getCurrentLocation());
+                const currentRoute = this.getRoutes().find(({ path }) => new RegExp(path).test(this.selector.getCurrentLocation()));
 
                 this.currentRoute = currentRoute;
                 this.hasRoute = !!currentRoute;
@@ -35,7 +36,7 @@
         },
         watch: {
             currentRoute(nextRoute) {
-                history.pushState(null, null, nextRoute.path);
+                this.hasRoute && history.pushState(null, null, nextRoute.path);
             }
         },
         created() {
