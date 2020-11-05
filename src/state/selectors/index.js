@@ -4,6 +4,11 @@ import {
     isAccountCreationRequestFailure,
 } from "./createAccount";
 import {
+    isAccountEditionRequestPending,
+    isAccountEditionRequestSuccess,
+    isAccountEditionRequestFailure,
+} from "./editAccount";
+import {
     getAccountCreationFormData,
     canSubmitAccountCreationForm
 } from "./editAccountCreationForm";
@@ -81,6 +86,15 @@ function createSelector(getState) {
         ),
         isAccountDeletionRequestFailure: isAccountDeletionRequestFailure(
             () => getState().accountDeletion
+        ),
+        isAccountEditionRequestPending: isAccountEditionRequestPending(
+            () => getSession().accountEdition
+        ),
+        isAccountEditionRequestSuccess: isAccountEditionRequestSuccess(
+            () => getSession().accountEdition
+        ),
+        isAccountEditionRequestFailure: isAccountEditionRequestFailure(
+            () => getSession().accountEdition
         ),
     }
 }

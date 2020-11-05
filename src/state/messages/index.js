@@ -7,6 +7,14 @@ import {
     dispatchAccountCreationFailure
 } from "./createAccount";
 import {
+    ACCOUNT_EDITION_REQUESTED,
+    ACCOUNT_EDITION_SUCCEEDED,
+    ACCOUNT_EDITION_FAILED,
+    dispatchAccountEditionRequest,
+    dispatchAccountEditionSuccess,
+    dispatchAccountEditionFailure
+} from "./editAccount";
+import {
     ACCOUNT_CREATION_FORM_EDITION_REQUESTED,
     ACCOUNT_CREATION_FORM_EDITION_SUCCEEDED,
     ACCOUNT_CREATION_FORM_EDITION_FAILED,
@@ -53,6 +61,9 @@ const messages = {
     ACCOUNT_CREATION_REQUESTED,
     ACCOUNT_CREATION_SUCCEEDED,
     ACCOUNT_CREATION_FAILED,
+    ACCOUNT_EDITION_REQUESTED,
+    ACCOUNT_EDITION_SUCCEEDED,
+    ACCOUNT_EDITION_FAILED,
     ACCOUNT_CREATION_FORM_EDITION_SUCCEEDED,
     ACCOUNT_CREATION_FORM_EDITION_REQUESTED,
     ACCOUNT_CREATION_FORM_EDITION_FAILED,
@@ -90,6 +101,9 @@ function createMessageDispatcher(dispatch) {
         dispatchAccountDeletionRequest: dispatchAccountDeletionRequest(dispatch),
         dispatchAccountDeletionSuccess: dispatchAccountDeletionSuccess(dispatch),
         dispatchAccountDeletionFailure: dispatchAccountDeletionFailure(dispatch),
+        dispatchAccountEditionRequest: dispatchAccountEditionRequest(dispatch),
+        dispatchAccountEditionSuccess: dispatchAccountEditionSuccess(dispatch),
+        dispatchAccountEditionFailure: dispatchAccountEditionFailure(dispatch),
     }
 }
 

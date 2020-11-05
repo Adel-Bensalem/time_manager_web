@@ -18,6 +18,9 @@ function createDispatcherToPresenterAdapter(messageDispatcher) {
         presentAccountDeletionRequest: messageDispatcher.dispatchAccountDeletionRequest,
         presentAccountDeletionSuccess: messageDispatcher.dispatchAccountDeletionSuccess,
         presentAccountDeletionFailure: messageDispatcher.dispatchAccountDeletionFailure,
+        presentAccountEditionRequest: messageDispatcher.dispatchAccountEditionRequest,
+        presentAccountEditionSuccess: messageDispatcher.dispatchAccountEditionSuccess,
+        presentAccountEditionFailure: messageDispatcher.dispatchAccountEditionFailure,
     }
 }
 
