@@ -9,6 +9,7 @@ import { reduceLocationState } from "./location";
 import { reduceAccountDeletionState } from "./deleteAccount";
 import { reduceAccountEditionState } from "./editAccount";
 import { reduceAccountEditionFormEditionState } from "./editAccountEditionForm";
+import { reduceTeamCreationState } from "./createTeam";
 
 const reduceState = combineReducers({
     accountCreation: reduceAccountCreationState,
@@ -20,7 +21,8 @@ const reduceState = combineReducers({
     location: reduceLocationState,
     accountDeletion: reduceAccountDeletionState,
     accountEdition: reduceAccountEditionState,
-    accountEditionFormEdition: reduceAccountEditionFormEditionState
+    accountEditionFormEdition: reduceAccountEditionFormEditionState,
+    teamCreation: reduceTeamCreationState
 });
 
 export { reduceState };

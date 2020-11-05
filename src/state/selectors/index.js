@@ -35,6 +35,11 @@ import {
     canSubmitAccountEditionForm,
     getAccountEditionFormData
 } from "./editAccountEditionForm";
+import {
+    isTeamCreationRequestPending,
+    isTeamCreationRequestSuccess,
+    isTeamCreationRequestFailure
+} from "./createTeam";
 import {hasSession, getSession} from "./session";
 import {getCurrentLocation} from "./location";
 
@@ -105,6 +110,15 @@ function createSelector(getState) {
         ),
         getAccountEditionFormData: getAccountEditionFormData(
             () => getState().accountEditionFormEdition
+        ),
+        isTeamCreationRequestPending: isTeamCreationRequestPending(
+            () => getState().teamCreation
+        ),
+        isTeamCreationRequestSuccess: isTeamCreationRequestSuccess(
+            () => getState().teamCreation
+        ),
+        isTeamCreationRequestFailure: isTeamCreationRequestFailure(
+            () => getState().teamCreation
         ),
     }
 }

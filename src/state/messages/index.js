@@ -64,6 +64,14 @@ import {
     dispatchAccountEditionFormEditionSuccess,
     dispatchAccountEditionFormEditionFailure
 } from "./editAccountEditionForm";
+import {
+    TEAM_CREATION_REQUESTED,
+    TEAM_CREATION_SUCCEEDED,
+    TEAM_CREATION_FAILED,
+    dispatchTeamCreationRequest,
+    dispatchTeamCreationSuccess,
+    dispatchTeamCreationFailure
+} from "./createTeam";
 
 const messages = {
     ACCOUNT_CREATION_REQUESTED,
@@ -90,6 +98,9 @@ const messages = {
     ACCOUNT_EDITION_FORM_EDITION_REQUESTED,
     ACCOUNT_EDITION_FORM_EDITION_SUCCEEDED,
     ACCOUNT_EDITION_FORM_EDITION_FAILED,
+    TEAM_CREATION_REQUESTED,
+    TEAM_CREATION_SUCCEEDED,
+    TEAM_CREATION_FAILED,
 };
 
 function createMessageDispatcher(dispatch) {
@@ -118,6 +129,9 @@ function createMessageDispatcher(dispatch) {
         dispatchAccountEditionFormEditionRequest: dispatchAccountEditionFormEditionRequest(dispatch),
         dispatchAccountEditionFormEditionSuccess: dispatchAccountEditionFormEditionSuccess(dispatch),
         dispatchAccountEditionFormEditionFailure: dispatchAccountEditionFormEditionFailure(dispatch),
+        dispatchTeamCreationRequest: dispatchTeamCreationRequest(dispatch),
+        dispatchTeamCreationSuccess: dispatchTeamCreationSuccess(dispatch),
+        dispatchTeamCreationFailure: dispatchTeamCreationFailure(dispatch),
     }
 }
 
