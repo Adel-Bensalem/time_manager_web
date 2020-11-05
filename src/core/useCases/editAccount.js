@@ -1,11 +1,11 @@
 import {isAccountValid} from "../entities/accountValidator";
 
-function editAccount(repository, presenter) {
-    return account => {
+function editAccount(repository, session, presenter) {
+    return (account) => {
         presenter.presentAccountEditionRequest();
 
         return isAccountValid(account) ?
-            repository.editAccount(account)
+            repository.editAccount(account, session.retrieve())
                 .then(presenter.presentAccountEditionSuccess)
                 .catch(presenter.presentAccountEditionFailure) :
             presenter.presentAccountEditionFailure();
