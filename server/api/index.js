@@ -20,4 +20,17 @@ router.get(
     })
 );
 
+router.put(
+    "/authentication",
+    (req, res) => res.status(200).send({
+        fullName: "John Doe",
+        email: "john.doe@test.test",
+        role: {
+            isGeneralManager: true,
+            isManager: false,
+            isEmployee: false
+        }
+    })
+);
+
 module.exports = router;
