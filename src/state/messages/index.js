@@ -37,6 +37,14 @@ import {
     dispatchSessionDecodeFailure,
 } from "./decodeSession";
 import {
+    ACCOUNT_DELETION_REQUESTED,
+    ACCOUNT_DELETION_SUCCEEDED,
+    ACCOUNT_DELETION_FAILED,
+    dispatchAccountDeletionRequest,
+    dispatchAccountDeletionSuccess,
+    dispatchAccountDeletionFailure,
+} from "./deleteAccount";
+import {
     LOCATION_CHANGED,
     dispatchLocationChange,
 } from "./location";
@@ -57,6 +65,9 @@ const messages = {
     SESSION_DECODE_SUCCEEDED,
     SESSION_DECODE_FAILED,
     LOCATION_CHANGED,
+    ACCOUNT_DELETION_REQUESTED,
+    ACCOUNT_DELETION_SUCCEEDED,
+    ACCOUNT_DELETION_FAILED,
 };
 
 function createMessageDispatcher(dispatch) {
@@ -76,6 +87,9 @@ function createMessageDispatcher(dispatch) {
         dispatchSessionDecodeSuccess: dispatchSessionDecodeSuccess(dispatch),
         dispatchSessionDecodeFailure: dispatchSessionDecodeFailure(dispatch),
         dispatchLocationChange: dispatchLocationChange(dispatch),
+        dispatchAccountDeletionRequest: dispatchAccountDeletionRequest(dispatch),
+        dispatchAccountDeletionSuccess: dispatchAccountDeletionSuccess(dispatch),
+        dispatchAccountDeletionFailure: dispatchAccountDeletionFailure(dispatch),
     }
 }
 

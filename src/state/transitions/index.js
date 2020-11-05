@@ -6,6 +6,7 @@ import { reduceAuthenticationFormFormEditionState } from "./editAuthenticationFo
 import { reduceSessionDecodeState } from "./decodeSession";
 import { reduceSessionState } from "./session";
 import { reduceLocationState } from "./location";
+import { reduceAccountDeletionState } from "./deleteAccount";
 
 const reduceState = combineReducers({
     generalManagerAccountCreation: reduceGeneralManagerAccountCreationState,
@@ -15,6 +16,7 @@ const reduceState = combineReducers({
     sessionDecode: reduceSessionDecodeState,
     session: reduceSessionState,
     location: reduceLocationState,
+    accountDeletion: reduceAccountDeletionState
 });
 
 export { reduceState };

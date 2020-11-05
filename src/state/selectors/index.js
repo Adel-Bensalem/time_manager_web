@@ -21,6 +21,11 @@ import {
     isSessionDecodeRequestSuccess,
     isSessionDecodeRequestFailure
 } from "./decodeSession";
+import {
+    isAccountDeletionRequestPending,
+    isAccountDeletionRequestSuccess,
+    isAccountDeletionRequestFailure
+} from "./deleteAccount";
 import { hasSession, getSession } from "./session";
 import { getCurrentLocation } from "./location";
 
@@ -68,6 +73,15 @@ function createSelector(getState) {
         hasSession: hasSession(() => getState().session),
         getSession: getSession(() => getState().session),
         getCurrentLocation: getCurrentLocation(() => getState().location),
+        isAccountDeletionRequestPending: isAccountDeletionRequestPending(
+            () => getState().accountDeletion
+        ),
+        isAccountDeletionRequestSuccess: isAccountDeletionRequestSuccess(
+            () => getState().accountDeletion
+        ),
+        isAccountDeletionRequestFailure: isAccountDeletionRequestFailure(
+            () => getState().accountDeletion
+        ),
     }
 }
 

@@ -1,11 +1,11 @@
 import { saveGeneralManagerAccount } from "./api/saveGeneralManagerAccountAccount"
 import { authenticate, decodeToken } from "./api/authenticate"
 
-function createServices(sendRequest) {
+function createServices(sendHttpRequest) {
     return {
-        saveGeneralManagerAccount: saveGeneralManagerAccount(sendRequest),
-        authenticate: authenticate(sendRequest),
-        decodeToken: decodeToken(sendRequest)
+        saveGeneralManagerAccount: saveGeneralManagerAccount(sendHttpRequest),
+        authenticate: authenticate(sendHttpRequest),
+        decodeToken: decodeToken(sendHttpRequest)
     }
 }
 

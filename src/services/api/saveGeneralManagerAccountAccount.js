@@ -1,6 +1,9 @@
-
-function saveGeneralManagerAccount(sendRequest) {
-    return account => sendRequest("/api/general-manager/", 'POST', account);
+function saveGeneralManagerAccount(sendHttpRequest) {
+    return account => sendHttpRequest({
+        endpoint: "/api/general-manager/",
+        method: 'POST',
+        data: account
+    });
 }
 
-export { saveGeneralManagerAccount };
+export {saveGeneralManagerAccount};

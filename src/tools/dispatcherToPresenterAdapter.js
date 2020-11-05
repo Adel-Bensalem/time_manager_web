@@ -15,6 +15,9 @@ function createDispatcherToPresenterAdapter(messageDispatcher) {
         presentSessionDecodeRequest: messageDispatcher.dispatchSessionDecodeRequest,
         presentSessionDecodeSuccess: messageDispatcher.dispatchSessionDecodeSuccess,
         presentSessionDecodeFailure: messageDispatcher.dispatchSessionDecodeFailure,
+        presentAccountDeletionRequest: messageDispatcher.dispatchAccountDeletionRequest,
+        presentAccountDeletionSuccess: messageDispatcher.dispatchAccountDeletionSuccess,
+        presentAccountDeletionFailure: messageDispatcher.dispatchAccountDeletionFailure,
     }
 }
 

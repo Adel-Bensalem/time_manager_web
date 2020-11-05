@@ -3,6 +3,7 @@ import { editGeneralManagerAccountCreationForm } from "./useCases/editGeneralMan
 import { authenticate } from "./useCases/authenticate"
 import { editAuthenticationForm } from "./useCases/editAuthenticationForm"
 import { decodeSession } from "./useCases/decodeSession"
+import { deleteAccount } from "./useCases/deleteAccount"
 
 function createCore(
     repository,
@@ -16,7 +17,8 @@ function createCore(
         editGeneralManagerAccountCreationForm: editGeneralManagerAccountCreationForm(presenter),
         authenticate: authenticate(gatekeeper, session, tokenDecoder, presenter),
         editAuthenticationForm: editAuthenticationForm(presenter),
-        decodeSession: decodeSession(session, tokenDecoder, presenter)
+        decodeSession: decodeSession(session, tokenDecoder, presenter),
+        deleteAccount: deleteAccount(repository, session, presenter)
     }
 }
 
