@@ -1,6 +1,6 @@
 import { combineReducers } from "redux"
-import { reduceGeneralManagerAccountCreationState } from "./createGeneralManagerAccount";
-import { reduceGeneralManagerAccountCreationFormEditionState } from "./editGeneralManagerAccountCreationForm";
+import { reduceAccountCreationState } from "./createAccount";
+import { reduceAccountCreationFormEditionState } from "./editAccountCreationForm";
 import { reduceAuthenticationState } from "./authenticate";
 import { reduceAuthenticationFormFormEditionState } from "./editAuthenticationForm";
 import { reduceSessionDecodeState } from "./decodeSession";
@@ -9,8 +9,8 @@ import { reduceLocationState } from "./location";
 import { reduceAccountDeletionState } from "./deleteAccount";
 
 const reduceState = combineReducers({
-    generalManagerAccountCreation: reduceGeneralManagerAccountCreationState,
-    generalManagerAccountCreationFormEdition: reduceGeneralManagerAccountCreationFormEditionState,
+    generalManagerAccountCreation: reduceAccountCreationState,
+    generalManagerAccountCreationFormEdition: reduceAccountCreationFormEditionState,
     authentication: reduceAuthenticationState,
     authenticationFormEdition: reduceAuthenticationFormFormEditionState,
     sessionDecode: reduceSessionDecodeState,

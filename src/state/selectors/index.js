@@ -1,12 +1,12 @@
 import {
-    isGeneralManagerAccountCreationRequestPending,
-    isGeneralManagerAccountCreationRequestSuccess,
-    isGeneralManagerAccountCreationRequestFailure,
-} from "./createGeneralManagerAccount";
+    isAccountCreationRequestPending,
+    isAccountCreationRequestSuccess,
+    isAccountCreationRequestFailure,
+} from "./createAccount";
 import {
-    getGeneralManagerAccountCreationFormData,
-    canSubmitGeneralManagerAccountCreationForm
-} from "./editGeneralManagerAccountCreationForm";
+    getAccountCreationFormData,
+    canSubmitAccountCreationForm
+} from "./editAccountCreationForm";
 import {
     isAuthenticationRequestPending,
     isAuthenticationRequestSuccess,
@@ -31,19 +31,19 @@ import { getCurrentLocation } from "./location";
 
 function createSelector(getState) {
     return {
-        isGeneralManagerAccountCreationRequestPending: isGeneralManagerAccountCreationRequestPending(
+        isAccountCreationRequestPending: isAccountCreationRequestPending(
             () => getState().generalManagerAccountCreation
         ),
-        isGeneralManagerAccountCreationRequestSuccess: isGeneralManagerAccountCreationRequestSuccess(
+        isAccountCreationRequestSuccess: isAccountCreationRequestSuccess(
             () => getState().generalManagerAccountCreation
         ),
-        isGeneralManagerAccountCreationRequestFailure: isGeneralManagerAccountCreationRequestFailure(
+        isAccountCreationRequestFailure: isAccountCreationRequestFailure(
             () => getState().generalManagerAccountCreation
         ),
-        getGeneralManagerAccountCreationFormData: getGeneralManagerAccountCreationFormData(
+        getAccountCreationFormData: getAccountCreationFormData(
             () => getState().generalManagerAccountCreationFormEdition
         ),
-        canSubmitGeneralManagerAccountCreationForm: canSubmitGeneralManagerAccountCreationForm(
+        canSubmitAccountCreationForm: canSubmitAccountCreationForm(
             () => getState().generalManagerAccountCreationFormEdition
         ),
         isAuthenticationRequestPending: isAuthenticationRequestPending(

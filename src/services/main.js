@@ -1,9 +1,9 @@
-import { saveGeneralManagerAccount } from "./api/saveGeneralManagerAccountAccount"
+import { saveAccount } from "./api/saveAccount"
 import { authenticate, decodeToken } from "./api/authenticate"
 
 function createServices(sendHttpRequest) {
     return {
-        saveGeneralManagerAccount: saveGeneralManagerAccount(sendHttpRequest),
+        saveAccount: saveAccount(sendHttpRequest),
         authenticate: authenticate(sendHttpRequest),
         decodeToken: decodeToken(sendHttpRequest)
     }

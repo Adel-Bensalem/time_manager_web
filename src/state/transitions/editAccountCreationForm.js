@@ -23,10 +23,10 @@ function reduceEditionFailure(state, { formData }) {
     return { formData, canSendForm: false };
 }
 
-const reduceGeneralManagerAccountCreationFormEditionState = createReducer(initialState, {
-    [messages.GENERAL_MANAGER_ACCOUNT_CREATION_FORM_EDITION_REQUESTED]: reduceEditionRequest,
-    [messages.GENERAL_MANAGER_ACCOUNT_CREATION_FORM_EDITION_SUCCEEDED]: reduceEditionSuccess,
-    [messages.GENERAL_MANAGER_ACCOUNT_CREATION_FORM_EDITION_FAILED]: reduceEditionFailure,
+const reduceAccountCreationFormEditionState = createReducer(initialState, {
+    [messages.ACCOUNT_CREATION_FORM_EDITION_REQUESTED]: reduceEditionRequest,
+    [messages.ACCOUNT_CREATION_FORM_EDITION_SUCCEEDED]: reduceEditionSuccess,
+    [messages.ACCOUNT_CREATION_FORM_EDITION_FAILED]: reduceEditionFailure,
 });
 
-export { reduceGeneralManagerAccountCreationFormEditionState };
+export { reduceAccountCreationFormEditionState };

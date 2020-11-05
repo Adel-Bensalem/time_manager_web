@@ -1,19 +1,19 @@
 import {
-    GENERAL_MANAGER_ACCOUNT_CREATION_REQUESTED,
-    GENERAL_MANAGER_ACCOUNT_CREATION_SUCCEEDED,
-    GENERAL_MANAGER_ACCOUNT_CREATION_FAILED,
-    dispatchGeneralManagerAccountCreationRequest,
-    dispatchGeneralManagerAccountCreationSuccess,
-    dispatchGeneralManagerAccountCreationFailure
-} from "./createGeneralManagerAccount";
+    ACCOUNT_CREATION_REQUESTED,
+    ACCOUNT_CREATION_SUCCEEDED,
+    ACCOUNT_CREATION_FAILED,
+    dispatchAccountCreationRequest,
+    dispatchAccountCreationSuccess,
+    dispatchAccountCreationFailure
+} from "./createAccount";
 import {
-    GENERAL_MANAGER_ACCOUNT_CREATION_FORM_EDITION_REQUESTED,
-    GENERAL_MANAGER_ACCOUNT_CREATION_FORM_EDITION_SUCCEEDED,
-    GENERAL_MANAGER_ACCOUNT_CREATION_FORM_EDITION_FAILED,
-    dispatchGeneralManagerAccountCreationFormEditionRequest,
-    dispatchGeneralManagerAccountCreationFormEditionSuccess,
-    dispatchGeneralManagerAccountCreationFormEditionFailure
-} from "./editGeneralManagerAccountCreationForm";
+    ACCOUNT_CREATION_FORM_EDITION_REQUESTED,
+    ACCOUNT_CREATION_FORM_EDITION_SUCCEEDED,
+    ACCOUNT_CREATION_FORM_EDITION_FAILED,
+    dispatchAccountCreationFormEditionRequest,
+    dispatchAccountCreationFormEditionSuccess,
+    dispatchAccountCreationFormEditionFailure
+} from "./editAccountCreationForm";
 import {
     AUTHENTICATION_REQUESTED,
     AUTHENTICATION_SUCCEEDED,
@@ -50,12 +50,12 @@ import {
 } from "./location";
 
 const messages = {
-    GENERAL_MANAGER_ACCOUNT_CREATION_REQUESTED,
-    GENERAL_MANAGER_ACCOUNT_CREATION_SUCCEEDED,
-    GENERAL_MANAGER_ACCOUNT_CREATION_FAILED,
-    GENERAL_MANAGER_ACCOUNT_CREATION_FORM_EDITION_SUCCEEDED,
-    GENERAL_MANAGER_ACCOUNT_CREATION_FORM_EDITION_REQUESTED,
-    GENERAL_MANAGER_ACCOUNT_CREATION_FORM_EDITION_FAILED,
+    ACCOUNT_CREATION_REQUESTED,
+    ACCOUNT_CREATION_SUCCEEDED,
+    ACCOUNT_CREATION_FAILED,
+    ACCOUNT_CREATION_FORM_EDITION_SUCCEEDED,
+    ACCOUNT_CREATION_FORM_EDITION_REQUESTED,
+    ACCOUNT_CREATION_FORM_EDITION_FAILED,
     AUTHENTICATION_REQUESTED,
     AUTHENTICATION_SUCCEEDED,
     AUTHENTICATION_FAILED,
@@ -72,12 +72,12 @@ const messages = {
 
 function createMessageDispatcher(dispatch) {
     return {
-        dispatchGeneralManagerAccountCreationRequest: dispatchGeneralManagerAccountCreationRequest(dispatch),
-        dispatchGeneralManagerAccountCreationSuccess: dispatchGeneralManagerAccountCreationSuccess(dispatch),
-        dispatchGeneralManagerAccountCreationFailure: dispatchGeneralManagerAccountCreationFailure(dispatch),
-        dispatchGeneralManagerAccountCreationFormEditionRequest: dispatchGeneralManagerAccountCreationFormEditionRequest(dispatch),
-        dispatchGeneralManagerAccountCreationFormEditionSuccess: dispatchGeneralManagerAccountCreationFormEditionSuccess(dispatch),
-        dispatchGeneralManagerAccountCreationFormEditionFailure: dispatchGeneralManagerAccountCreationFormEditionFailure(dispatch),
+        dispatchAccountCreationRequest: dispatchAccountCreationRequest(dispatch),
+        dispatchAccountCreationSuccess: dispatchAccountCreationSuccess(dispatch),
+        dispatchAccountCreationFailure: dispatchAccountCreationFailure(dispatch),
+        dispatchAccountCreationFormEditionRequest: dispatchAccountCreationFormEditionRequest(dispatch),
+        dispatchAccountCreationFormEditionSuccess: dispatchAccountCreationFormEditionSuccess(dispatch),
+        dispatchAccountCreationFormEditionFailure: dispatchAccountCreationFormEditionFailure(dispatch),
         dispatchAuthenticationRequest: dispatchAuthenticationRequest(dispatch),
         dispatchAuthenticationSuccess: dispatchAuthenticationSuccess(dispatch),
         dispatchAuthenticationFailure: dispatchAuthenticationFailure(dispatch),

@@ -1,5 +1,5 @@
-import { createGeneralManagerAccount } from "./useCases/createGeneralManagerAccount"
-import { editGeneralManagerAccountCreationForm } from "./useCases/editGeneralManagerAccountCreationForm"
+import { createAccount } from "./useCases/createAccount"
+import { editAccountCreationForm } from "./useCases/editAccountCreationForm"
 import { authenticate } from "./useCases/authenticate"
 import { editAuthenticationForm } from "./useCases/editAuthenticationForm"
 import { decodeSession } from "./useCases/decodeSession"
@@ -13,8 +13,8 @@ function createCore(
     tokenDecoder
 ) {
     return {
-        createGeneralManagerAccount: createGeneralManagerAccount(repository, presenter),
-        editGeneralManagerAccountCreationForm: editGeneralManagerAccountCreationForm(presenter),
+        createAccount: createAccount(repository, presenter),
+        editAccountCreationForm: editAccountCreationForm(presenter),
         authenticate: authenticate(gatekeeper, session, tokenDecoder, presenter),
         editAuthenticationForm: editAuthenticationForm(presenter),
         decodeSession: decodeSession(session, tokenDecoder, presenter),

@@ -1,12 +1,12 @@
 
 function createDispatcherToPresenterAdapter(messageDispatcher) {
     return {
-        presentGeneralManagerAccountCreationRequest: messageDispatcher.dispatchGeneralManagerAccountCreationRequest,
-        presentGeneralManagerAccountCreationSuccess: messageDispatcher.dispatchGeneralManagerAccountCreationSuccess,
-        presentGeneralManagerAccountCreationFailure: messageDispatcher.dispatchGeneralManagerAccountCreationFailure,
-        presentGeneralManagerAccountCreationFormEditionRequest: messageDispatcher.dispatchGeneralManagerAccountCreationFormEditionRequest,
-        presentGeneralManagerAccountCreationFormEditionSuccess: messageDispatcher.dispatchGeneralManagerAccountCreationFormEditionSuccess,
-        presentGeneralManagerAccountCreationFormEditionFailure: messageDispatcher.dispatchGeneralManagerAccountCreationFormEditionFailure,
+        presentAccountCreationRequest: messageDispatcher.dispatchAccountCreationRequest,
+        presentAccountCreationSuccess: messageDispatcher.dispatchAccountCreationSuccess,
+        presentAccountCreationFailure: messageDispatcher.dispatchAccountCreationFailure,
+        presentAccountCreationFormEditionRequest: messageDispatcher.dispatchAccountCreationFormEditionRequest,
+        presentAccountCreationFormEditionSuccess: messageDispatcher.dispatchAccountCreationFormEditionSuccess,
+        presentAccountCreationFormEditionFailure: messageDispatcher.dispatchAccountCreationFormEditionFailure,
         presentAuthenticationRequest: messageDispatcher.dispatchAuthenticationRequest,
         presentAuthenticationSuccess: messageDispatcher.dispatchAuthenticationSuccess,
         presentAuthenticationFailure: messageDispatcher.dispatchAuthenticationFailure,
