@@ -5,6 +5,7 @@ import { editAuthenticationForm } from "./useCases/editAuthenticationForm"
 import { decodeSession } from "./useCases/decodeSession"
 import { deleteAccount } from "./useCases/deleteAccount"
 import { editAccount } from "./useCases/editAccount"
+import { editAccountEditionForm } from "./useCases/editAccountEditionForm"
 
 function createCore(
     repository,
@@ -20,7 +21,8 @@ function createCore(
         editAuthenticationForm: editAuthenticationForm(presenter),
         decodeSession: decodeSession(session, tokenDecoder, presenter),
         deleteAccount: deleteAccount(repository, session, presenter),
-        editAccount: editAccount(repository, presenter)
+        editAccount: editAccount(repository, presenter),
+        editAccountEditionForm: editAccountEditionForm(presenter),
     }
 }
 

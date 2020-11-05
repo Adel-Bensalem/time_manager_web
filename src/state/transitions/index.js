@@ -8,10 +8,11 @@ import { reduceSessionState } from "./session";
 import { reduceLocationState } from "./location";
 import { reduceAccountDeletionState } from "./deleteAccount";
 import { reduceAccountEditionState } from "./editAccount";
+import { reduceAccountEditionFormEditionState } from "./editAccountEditionForm";
 
 const reduceState = combineReducers({
-    generalManagerAccountCreation: reduceAccountCreationState,
-    generalManagerAccountCreationFormEdition: reduceAccountCreationFormEditionState,
+    accountCreation: reduceAccountCreationState,
+    accountCreationFormEdition: reduceAccountCreationFormEditionState,
     authentication: reduceAuthenticationState,
     authenticationFormEdition: reduceAuthenticationFormFormEditionState,
     sessionDecode: reduceSessionDecodeState,
@@ -19,6 +20,7 @@ const reduceState = combineReducers({
     location: reduceLocationState,
     accountDeletion: reduceAccountDeletionState,
     accountEdition: reduceAccountEditionState,
+    accountEditionFormEdition: reduceAccountEditionFormEditionState
 });
 
 export { reduceState };

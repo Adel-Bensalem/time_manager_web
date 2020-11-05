@@ -21,6 +21,9 @@ function createDispatcherToPresenterAdapter(messageDispatcher) {
         presentAccountEditionRequest: messageDispatcher.dispatchAccountEditionRequest,
         presentAccountEditionSuccess: messageDispatcher.dispatchAccountEditionSuccess,
         presentAccountEditionFailure: messageDispatcher.dispatchAccountEditionFailure,
+        presentAccountEditionFormEditionRequest: messageDispatcher.dispatchAccountEditionFormEditionRequest,
+        presentAccountEditionFormEditionSuccess: messageDispatcher.dispatchAccountEditionFormEditionSuccess,
+        presentAccountEditionFormEditionFailure: messageDispatcher.dispatchAccountEditionFormEditionFailure,
     }
 }
 

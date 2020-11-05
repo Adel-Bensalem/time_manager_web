@@ -31,25 +31,29 @@ import {
     isAccountDeletionRequestSuccess,
     isAccountDeletionRequestFailure
 } from "./deleteAccount";
-import { hasSession, getSession } from "./session";
-import { getCurrentLocation } from "./location";
+import {
+    canSubmitAccountEditionForm,
+    getAccountEditionFormData
+} from "./editAccountEditionForm";
+import {hasSession, getSession} from "./session";
+import {getCurrentLocation} from "./location";
 
 function createSelector(getState) {
     return {
         isAccountCreationRequestPending: isAccountCreationRequestPending(
-            () => getState().generalManagerAccountCreation
+            () => getState().accountCreation
         ),
         isAccountCreationRequestSuccess: isAccountCreationRequestSuccess(
-            () => getState().generalManagerAccountCreation
+            () => getState().accountCreation
         ),
         isAccountCreationRequestFailure: isAccountCreationRequestFailure(
-            () => getState().generalManagerAccountCreation
+            () => getState().accountCreation
         ),
         getAccountCreationFormData: getAccountCreationFormData(
-            () => getState().generalManagerAccountCreationFormEdition
+            () => getState().accountCreationFormEdition
         ),
         canSubmitAccountCreationForm: canSubmitAccountCreationForm(
-            () => getState().generalManagerAccountCreationFormEdition
+            () => getState().accountCreationFormEdition
         ),
         isAuthenticationRequestPending: isAuthenticationRequestPending(
             () => getState().authentication
@@ -88,13 +92,19 @@ function createSelector(getState) {
             () => getState().accountDeletion
         ),
         isAccountEditionRequestPending: isAccountEditionRequestPending(
-            () => getSession().accountEdition
+            () => getState().accountEdition
         ),
         isAccountEditionRequestSuccess: isAccountEditionRequestSuccess(
-            () => getSession().accountEdition
+            () => getState().accountEdition
         ),
         isAccountEditionRequestFailure: isAccountEditionRequestFailure(
-            () => getSession().accountEdition
+            () => getState().accountEdition
+        ),
+        canSubmitAccountEditionForm: canSubmitAccountEditionForm(
+            () => getState().accountEditionFormEdition
+        ),
+        getAccountEditionFormData: getAccountEditionFormData(
+            () => getState().accountEditionFormEdition
         ),
     }
 }

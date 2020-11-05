@@ -56,6 +56,14 @@ import {
     LOCATION_CHANGED,
     dispatchLocationChange,
 } from "./location";
+import {
+    ACCOUNT_EDITION_FORM_EDITION_REQUESTED,
+    ACCOUNT_EDITION_FORM_EDITION_SUCCEEDED,
+    ACCOUNT_EDITION_FORM_EDITION_FAILED,
+    dispatchAccountEditionFormEditionRequest,
+    dispatchAccountEditionFormEditionSuccess,
+    dispatchAccountEditionFormEditionFailure
+} from "./editAccountEditionForm";
 
 const messages = {
     ACCOUNT_CREATION_REQUESTED,
@@ -79,6 +87,9 @@ const messages = {
     ACCOUNT_DELETION_REQUESTED,
     ACCOUNT_DELETION_SUCCEEDED,
     ACCOUNT_DELETION_FAILED,
+    ACCOUNT_EDITION_FORM_EDITION_REQUESTED,
+    ACCOUNT_EDITION_FORM_EDITION_SUCCEEDED,
+    ACCOUNT_EDITION_FORM_EDITION_FAILED,
 };
 
 function createMessageDispatcher(dispatch) {
@@ -104,6 +115,9 @@ function createMessageDispatcher(dispatch) {
         dispatchAccountEditionRequest: dispatchAccountEditionRequest(dispatch),
         dispatchAccountEditionSuccess: dispatchAccountEditionSuccess(dispatch),
         dispatchAccountEditionFailure: dispatchAccountEditionFailure(dispatch),
+        dispatchAccountEditionFormEditionRequest: dispatchAccountEditionFormEditionRequest(dispatch),
+        dispatchAccountEditionFormEditionSuccess: dispatchAccountEditionFormEditionSuccess(dispatch),
+        dispatchAccountEditionFormEditionFailure: dispatchAccountEditionFormEditionFailure(dispatch),
     }
 }
 
