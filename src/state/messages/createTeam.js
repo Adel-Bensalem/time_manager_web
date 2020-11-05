@@ -8,7 +8,7 @@ function dispatchTeamCreationRequest(dispatch) {
 }
 
 function dispatchTeamCreationSuccess(dispatch) {
-    return () => dispatch({ type: TEAM_CREATION_SUCCEEDED })
+    return (team) => dispatch({ type: TEAM_CREATION_SUCCEEDED, team })
 }
 
 function dispatchTeamCreationFailure(dispatch) {

@@ -40,6 +40,12 @@ import {
     isTeamCreationRequestSuccess,
     isTeamCreationRequestFailure
 } from "./createTeam";
+import {
+    isTeamsRetrievalRequestPending,
+    isTeamsRetrievalRequestSuccess,
+    isTeamsRetrievalRequestFailure,
+    getTeams
+} from "./retrieveTeams";
 import {hasSession, getSession} from "./session";
 import {getCurrentLocation} from "./location";
 
@@ -120,6 +126,16 @@ function createSelector(getState) {
         isTeamCreationRequestFailure: isTeamCreationRequestFailure(
             () => getState().teamCreation
         ),
+        isTeamsRetrievalRequestPending: isTeamsRetrievalRequestPending(
+            () => getState().teamsRetrieval
+        ),
+        isTeamsRetrievalRequestSuccess: isTeamsRetrievalRequestSuccess(
+            () => getState().teamsRetrieval
+        ),
+        isTeamsRetrievalRequestFailure: isTeamsRetrievalRequestFailure(
+            () => getState().teamsRetrieval
+        ),
+        getTeams: getTeams(() => getState().teamsRetrieval),
     }
 }
 

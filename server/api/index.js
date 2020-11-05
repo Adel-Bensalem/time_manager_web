@@ -42,4 +42,25 @@ router.post(
     })
 );
 
+router.get(
+    "/team",
+    (req, res) => res.status(200).send([
+        {
+            id: Math.random(),
+            name: req.body.name,
+            members: []
+        },
+        {
+            id: Math.random(),
+            name: req.body.name,
+            members: []
+        },
+        {
+            id: Math.random(),
+            name: req.body.name,
+            members: []
+        }
+    ])
+);
+
 module.exports = router;

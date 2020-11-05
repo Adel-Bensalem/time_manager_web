@@ -6,7 +6,7 @@ import { decodeSession } from "./useCases/decodeSession"
 import { deleteAccount } from "./useCases/deleteAccount"
 import { editAccount } from "./useCases/editAccount"
 import { editAccountEditionForm } from "./useCases/editAccountEditionForm"
-import {  } from "./useCases/createTeam"
+import { createTeam } from "./useCases/createTeam"
 
 function createCore(
     repository,
@@ -24,6 +24,7 @@ function createCore(
         deleteAccount: deleteAccount(repository, session, presenter),
         editAccount: editAccount(repository, presenter),
         editAccountEditionForm: editAccountEditionForm(presenter),
+        createTeam: createTeam(repository, session, presenter)
     }
 }
 

@@ -72,6 +72,14 @@ import {
     dispatchTeamCreationSuccess,
     dispatchTeamCreationFailure
 } from "./createTeam";
+import {
+    TEAMS_RETRIEVAL_REQUESTED,
+    TEAMS_RETRIEVAL_SUCCEEDED,
+    TEAMS_RETRIEVAL_FAILED,
+    dispatchTeamsRetrievalRequest,
+    dispatchTeamsRetrievalSuccess,
+    dispatchTeamsRetrievalFailure
+} from "./retrieveTeams";
 
 const messages = {
     ACCOUNT_CREATION_REQUESTED,
@@ -101,6 +109,9 @@ const messages = {
     TEAM_CREATION_REQUESTED,
     TEAM_CREATION_SUCCEEDED,
     TEAM_CREATION_FAILED,
+    TEAMS_RETRIEVAL_REQUESTED,
+    TEAMS_RETRIEVAL_SUCCEEDED,
+    TEAMS_RETRIEVAL_FAILED,
 };
 
 function createMessageDispatcher(dispatch) {
@@ -132,6 +143,9 @@ function createMessageDispatcher(dispatch) {
         dispatchTeamCreationRequest: dispatchTeamCreationRequest(dispatch),
         dispatchTeamCreationSuccess: dispatchTeamCreationSuccess(dispatch),
         dispatchTeamCreationFailure: dispatchTeamCreationFailure(dispatch),
+        dispatchTeamsRetrievalRequest: dispatchTeamsRetrievalRequest(dispatch),
+        dispatchTeamsRetrievalSuccess: dispatchTeamsRetrievalSuccess(dispatch),
+        dispatchTeamsRetrievalFailure: dispatchTeamsRetrievalFailure(dispatch),
     }
 }
 

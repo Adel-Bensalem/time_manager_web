@@ -1,9 +1,10 @@
 
 function saveTeam(sendHttpRequest) {
-    return account => sendHttpRequest({
+    return (team, { token }) => sendHttpRequest({
         endpoint: "/api/team/",
         method: 'POST',
-        data: account
+        data: team,
+        headers: { Authorization: `Bearer ${token}` }
     });
 }
 
