@@ -60,6 +60,11 @@ import {
     isArrivalTimeReportRequestSuccess,
     isArrivalTimeReportRequestFailure,
 } from "./reportArrivalTime";
+import {
+    isDepartureTimeReportRequestPending,
+    isDepartureTimeReportRequestSuccess,
+    isDepartureTimeReportRequestFailure
+} from "./reportDepartureTime";
 import {hasSession, getSession} from "./session";
 import {getCurrentLocation} from "./location";
 
@@ -173,6 +178,15 @@ function createSelector(getState) {
         ),
         isArrivalTimeReportRequestFailure: isArrivalTimeReportRequestFailure(
             () => getState().arrivalTimeReport
+        ),
+        isDepartureTimeReportRequestPending: isDepartureTimeReportRequestPending(
+            () => getState().departureTimeReport
+        ),
+        isDepartureTimeReportRequestSuccess: isDepartureTimeReportRequestSuccess(
+            () => getState().departureTimeReport
+        ),
+        isDepartureTimeReportRequestFailure: isDepartureTimeReportRequestFailure(
+            () => getState().departureTimeReport
         ),
     }
 }

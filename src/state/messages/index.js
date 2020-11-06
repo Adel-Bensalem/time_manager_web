@@ -102,6 +102,14 @@ import {
     dispatchArrivalTimeReportSuccess,
     dispatchArrivalTimeReportFailure
 } from "./reportArrivalTime";
+import {
+    DEPARTURE_TIME_REPORT_REQUESTED,
+    DEPARTURE_TIME_REPORT_SUCCEEDED,
+    DEPARTURE_TIME_REPORT_FAILED,
+    dispatchDepartureTimeReportRequest,
+    dispatchDepartureTimeReportSuccess,
+    dispatchDepartureTimeReportFailure
+} from "./reportDepartureTime";
 
 const messages = {
     ACCOUNT_CREATION_REQUESTED,
@@ -142,6 +150,9 @@ const messages = {
     ARRIVAL_TIME_REPORT_REQUESTED,
     ARRIVAL_TIME_REPORT_SUCCEEDED,
     ARRIVAL_TIME_REPORT_FAILED,
+    DEPARTURE_TIME_REPORT_REQUESTED,
+    DEPARTURE_TIME_REPORT_SUCCEEDED,
+    DEPARTURE_TIME_REPORT_FAILED,
 };
 
 function createMessageDispatcher(dispatch) {
@@ -184,6 +195,9 @@ function createMessageDispatcher(dispatch) {
         dispatchArrivalTimeReportRequest: dispatchArrivalTimeReportRequest(dispatch),
         dispatchArrivalTimeReportSuccess: dispatchArrivalTimeReportSuccess(dispatch),
         dispatchArrivalTimeReportFailure: dispatchArrivalTimeReportFailure(dispatch),
+        dispatchDepartureTimeReportRequest: dispatchDepartureTimeReportRequest(dispatch),
+        dispatchDepartureTimeReportSuccess: dispatchDepartureTimeReportSuccess(dispatch),
+        dispatchDepartureTimeReportFailure: dispatchDepartureTimeReportFailure(dispatch),
     }
 }
 

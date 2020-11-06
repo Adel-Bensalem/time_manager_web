@@ -14,6 +14,7 @@ import { reduceTeamsRetrievalState } from "./retrieveTeams";
 import { reduceEmployeeAdditionState } from "./addEmployee";
 import { reduceEmployeeAdditionFormFormEditionState } from "./editEmployeeAdditionForm";
 import { reduceArrivalTimeReportState } from "./reportArrivalTime";
+import { reduceDepartureTimeReportState } from "./reportDepartureTime";
 
 const reduceState = combineReducers({
     accountCreation: reduceAccountCreationState,
@@ -30,7 +31,8 @@ const reduceState = combineReducers({
     teamsRetrieval: reduceTeamsRetrievalState,
     employeeAddition: reduceEmployeeAdditionState,
     employeeAdditionFormEdition: reduceEmployeeAdditionFormFormEditionState,
-    arrivalTimeReport: reduceArrivalTimeReportState
+    arrivalTimeReport: reduceArrivalTimeReportState,
+    departureTimeReport: reduceDepartureTimeReportState,
 });
 
 export { reduceState };
