@@ -9,7 +9,7 @@ function authenticate(sendHttpRequest) {
 function decodeToken(sendHttpRequest) {
     return token => sendHttpRequest({
         endpoint: "/api/authentication/",
-        method: 'POST',
+        method: 'GET',
         headers: { Authorization: `Bearer ${token}` }
     });
 }

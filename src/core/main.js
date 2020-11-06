@@ -26,7 +26,7 @@ function createCore(
         editAuthenticationForm: editAuthenticationForm(presenter),
         decodeSession: decodeSession(session, tokenDecoder, presenter),
         deleteAccount: deleteAccount(repository, session, presenter),
-        editAccount: editAccount(repository, presenter),
+        editAccount: editAccount(repository, session, presenter),
         editAccountEditionForm: editAccountEditionForm(presenter),
         createTeam: createTeam(repository, session, presenter),
         addEmployee: addEmployee(repository, session, presenter),
