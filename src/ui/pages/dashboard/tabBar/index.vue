@@ -4,6 +4,7 @@
                 v-for="tab of tabs"
                 class="tab-bar__tab"
                 :class="{ 'tab-bar__tab--selected': tab.name === currentTab.name }"
+                :key="tab.name"
                 @click="selectTab(tab)"
         >
             <span class="tab-pane__text">{{ tab.name }}</span>
