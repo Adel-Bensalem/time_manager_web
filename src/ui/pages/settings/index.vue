@@ -80,4 +80,18 @@
         max-width: 40rem;
         margin: 0 auto;
     }
+
+    @media only screen and (max-width: 64em) {
+        .settings {
+            flex-direction: column;
+        }
+
+        .settings__section__title {
+            max-width: initial;
+        }
+
+        .settings__section__body {
+            max-width: initial;
+        }
+    }
 </style>

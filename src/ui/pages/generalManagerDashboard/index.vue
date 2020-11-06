@@ -7,6 +7,7 @@
     import teamIcon from "../../assets/team.svg";
     import settingsIcon from "../../assets/settings.svg";
 
+    import TimeReport from "../../components/timeReport";
     import Dashboard from "../../components/dashboard";
     import Teams from "../../components/teams";
     import Settings from "../settings";
@@ -21,22 +22,8 @@
                         icon: `${clockIcon}#clock`,
                         components: [
                             {
-                                name: "Team list 1",
-                                component: {
-                                    template: "<h1>TEST 1</h1>"
-                                }
-                            },
-                            {
-                                name: "Team list 2",
-                                component: {
-                                    template: "<h1>TEST 4</h1>"
-                                }
-                            },
-                            {
-                                name: "Team list 3",
-                                component: {
-                                    template: "<h1>TEST 5</h1>"
-                                }
+                                name: "Time report",
+                                component: TimeReport
                             }
                         ]
                     },
