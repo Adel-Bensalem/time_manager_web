@@ -7,8 +7,8 @@ function reportArrivalTime(repository, session, presenter) {
         isTimeValid(time) && session.exist() ?
             repository
                 .saveArrivalTime(time, session.retrieve())
-                .then(presentArrivalTimeReportSuccess)
-                .catch(presentArrivalTimeReportFailure) :
+                .then(presenter.presentArrivalTimeReportSuccess)
+                .catch(presenter.presentArrivalTimeReportFailure) :
             presenter.presentArrivalTimeReportFailure()
     }
 }
