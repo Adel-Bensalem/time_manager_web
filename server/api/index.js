@@ -47,18 +47,54 @@ router.get(
     (req, res) => res.status(200).send([
         {
             id: Math.random(),
-            name: req.body.name,
+            name: "Team 1",
             members: []
         },
         {
             id: Math.random(),
-            name: req.body.name,
-            members: []
+            name: "Team 2",
+            members: [
+                {
+                    fullName: "John Doe",
+                    email: "john.doe@test.test",
+                    role: {
+                        isGeneralManager: false,
+                        isManager: true,
+                        isEmployee: false
+                    }
+                },
+                {
+                    fullName: "John Doe",
+                    email: "john.doe@test.test",
+                    role: {
+                        isGeneralManager: false,
+                        isManager: false,
+                        isEmployee: true
+                    }
+                },
+                {
+                    fullName: "John Doe",
+                    email: "john.doe@test.test",
+                    role: {
+                        isGeneralManager: false,
+                        isManager: false,
+                        isEmployee: true
+                    }
+                },
+            ]
         },
         {
             id: Math.random(),
-            name: req.body.name,
-            members: []
+            name: "Team 3",
+            members: [{
+                fullName: "John Doe",
+                email: "john.doe@test.test",
+                role: {
+                    isGeneralManager: false,
+                    isManager: true,
+                    isEmployee: false
+                }
+            }]
         }
     ])
 );

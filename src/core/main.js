@@ -11,6 +11,7 @@ import { addEmployee } from "./useCases/addEmployee";
 import { editEmployeeAdditionForm } from "./useCases/editEmployeeAdditionForm";
 import { reportArrivalTime } from "./useCases/reportArrivalTime";
 import { reportDepartureTime } from "./useCases/reportDepartureTime";
+import { retrieveTeams } from "./useCases/retrieveTeams";
 
 function createCore(
     repository,
@@ -33,6 +34,7 @@ function createCore(
         editEmployeeAdditionForm: editEmployeeAdditionForm(presenter),
         reportArrivalTime: reportArrivalTime(repository, session, presenter),
         reportDepartureTime: reportDepartureTime(repository, session, presenter),
+        retrieveTeams: retrieveTeams(repository, session, presenter)
     }
 }
 

@@ -71,4 +71,15 @@
     .dashboard__main {
         flex: 1;
     }
+
+
+    @media only screen and (max-width: 64em) {
+        .dashboard {
+            flex-direction: column;
+        }
+
+        .dashboard__aside {
+            order: 2;
+        }
+    }
 </style>

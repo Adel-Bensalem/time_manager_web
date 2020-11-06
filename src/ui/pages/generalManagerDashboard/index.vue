@@ -3,10 +3,12 @@
 </template>
 
 <script>
-    import Dashboard from "../../components/dashboard";
     import clockIcon from "../../assets/clock.svg";
     import teamIcon from "../../assets/team.svg";
     import settingsIcon from "../../assets/settings.svg";
+
+    import Dashboard from "../../components/dashboard";
+    import Teams from "../../components/teams";
     import Settings from "../settings";
 
     export default {
@@ -44,9 +46,7 @@
                         components: [
                             {
                                 name: "Team list",
-                                component: {
-                                    template: "<h1>TEST 2</h1>"
-                                }
+                                component: Teams
                             }
                         ]
                     },

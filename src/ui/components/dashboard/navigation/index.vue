@@ -62,4 +62,14 @@
         font-weight: 500;
         color: var(--color-white);
     }
+
+    @media only screen and (max-width: 64em) {
+        .navigation {
+            flex-direction: row;
+        }
+
+        .navigation__item {
+            flex: 1;
+        }
+    }
 </style>
