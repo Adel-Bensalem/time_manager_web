@@ -86,8 +86,10 @@
     }
 
     .landing__title {
-        font-size: 1.8rem;
+        padding: 1rem;
         color: var(--color-black);
+        border-bottom: 1px solid var(--color-black);
+        font-size: 1.8rem;
         font-weight: 600;
         margin-bottom: 2rem;
     }

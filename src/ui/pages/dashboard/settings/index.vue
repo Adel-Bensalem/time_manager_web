@@ -12,14 +12,21 @@
                 />
             </div>
         </div>
+        <div class="settings__section">
+            <h1 class="settings__section__title">Delete Account</h1>
+            <div class="settings__section__body">
+                <AccountDeletion />
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
     import AccountEdition from "../../../components/accountEdition";
+    import AccountDeletion from "../../../components/accountDeletion";
 
     export default {
-        components: {AccountEdition},
+        components: {AccountEdition, AccountDeletion},
         data() {
             return {
                 editionFormData: this.selector.getAccountEditionFormData(),
@@ -48,7 +55,6 @@
 <style scoped>
     .settings {
         display: flex;
-        justify-content: center;
         flex-direction: row;
         flex-wrap: wrap;
         width: 100%;
@@ -56,18 +62,22 @@
     }
 
     .settings__section {
-        max-width: 40rem;
-        width: 100%;
+        flex: 1;
+        padding: 2rem;
     }
 
     .settings__section__title {
-        font-size: 1.8rem;
+        padding: 1rem;
         color: var(--color-black);
+        border-bottom: 1px solid var(--color-black);
+        font-size: 1.8rem;
         font-weight: 600;
-        margin-bottom: 2rem;
+        margin: 0 auto 2rem;
+        max-width: 40rem;
     }
 
     .settings__section__body {
-
+        max-width: 40rem;
+        margin: 0 auto;
     }
 </style>

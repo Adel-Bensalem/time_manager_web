@@ -16,20 +16,25 @@
                 @input="editForm({ ...data, password: $event.target.value })"
             />
         </form>
-        <button
-                class="authentication__button"
+        <Button
                 :disabled="!canAuthenticate"
+                :is-loading="request.isRequestPending"
+                :has-success="request.isRequestSuccessful"
+                :has-error="request.isRequestFailure"
                 @click="submitForm"
         >
             Submit
-        </button>
+        </Button>
     </div>
 </template>
 
 <script>
+    import Button from "../button"
+
     export default {
         name: "Authentication",
         emits: ["edit-authentication-form", "authenticate"],
+        components: { Button },
         props: {
             data: { email: String, password: String },
             canAuthenticate: Boolean,
@@ -79,28 +84,5 @@
         background-color: var(--color-white);
         color: var(--color-black);
         padding: 1rem 2rem;
-    }
-
-    .authentication__button {
-        color: var(--color-white);
-        padding: 1rem 3rem;
-        font-size: 1.6rem;
-        border: 1px solid var(--color-white);
-        background-color: var(--color-primary);
-        transition: color .4s, border .4s, background-color .4s;
-        cursor: pointer;
-    }
-
-    .authentication__button:hover {
-        color: var(--color-white);
-        border: 1px solid var(--color-black);
-        background-color: var(--color-black);
-    }
-
-    .authentication__button:disabled {
-        color: var(--color-black);
-        border: 1px solid var(--color-black);
-        background-color: var(--color-white);
-        cursor: initial;
     }
 </style>

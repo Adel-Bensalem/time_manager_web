@@ -1,20 +1,23 @@
 <template>
-    <div class="account-creation">
-        <div class="account-creation__form">
-            <account-creation-form :data="formData" @edit-form="editAccountEditionForm" />
+    <div class="account-edition">
+        <div class="account-edition__form">
+            <Form :data="formData" @edit-form="editAccountEditionForm" />
         </div>
-        <button
-                class="account-creation__button"
+        <Button
                 :disabled="!canSubmitForm"
+                :is-loading="request.isRequestPending"
+                :has-success="request.isRequestSuccessful"
+                :has-error="request.isRequestFailure"
                 @click="editAccount"
         >
             Send
-        </button>
+        </Button>
     </div>
 </template>
 
 <script>
     import Form from "./form";
+    import Button from "../button"
 
     export default {
         name: "AccountCreation",
@@ -34,7 +37,7 @@
             },
             canSubmitForm: Boolean
         },
-        components: { 'account-creation-form': Form },
+        components: { Form, Button },
         methods: {
             editAccountEditionForm(formData) {
                 this.$emit("edit-account-edition-form", formData);
@@ -47,37 +50,14 @@
 </script>
 
 <style scoped>
-    .account-creation {
+    .account-edition {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    .account-creation__form {
+    .account-edition__form {
         width: 100%;
         margin-bottom: 2rem;
-    }
-
-    .account-creation__button {
-        color: var(--color-white);
-        padding: 1rem 3rem;
-        font-size: 1.6rem;
-        border: 1px solid var(--color-white);
-        background-color: var(--color-primary);
-        transition: color .4s, border .4s, background-color .4s;
-        cursor: pointer;
-    }
-
-    .account-creation__button:hover {
-        color: var(--color-white);
-        border: 1px solid var(--color-black);
-        background-color: var(--color-black);
-    }
-
-    .account-creation__button:disabled {
-        color: var(--color-black);
-        border: 1px solid var(--color-black);
-        background-color: var(--color-white);
-        cursor: initial;
     }
 </style>

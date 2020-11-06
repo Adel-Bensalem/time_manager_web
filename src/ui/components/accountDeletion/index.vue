@@ -1,19 +1,45 @@
 <template>
     <div class="account-deletion">
         <div class="account-deletion__main">
-            <h1 class="account-deletion__title">Delete account</h1>
             <p class="account-deletion__paragraph">
                 If you delete your account all associated data will be lost forever
             </p>
-            <button class="account-deletion__button" @click>Confirm</button>
+            <Button
+                    :is-disabled="isRequestPending"
+                    :is-loading="isRequestPending"
+                    :has-success="isRequestSuccess"
+                    :has-error="isRequestFailure"
+                    @click="deleteAccount"
+            >
+                Confirm
+            </Button>
         </div>
     </div>
 </template>
 
 <script>
+    import Button from "../button"
+
     export default {
+        components: { Button },
+        data() {
+            return {
+                isRequestPending: this.selector.isAccountDeletionRequestPending(),
+                isRequestSuccess: this.selector.isAccountDeletionRequestSuccess(),
+                isRequestFailure: this.selector.isAccountDeletionRequestFailure(),
+            }
+        },
         methods: {
-            deleteAccount()
+            deleteAccount() {
+                this.core.deleteAccount();
+            }
+        },
+        created() {
+            this.subscribeToStore(() => {
+                this.isRequestPending = this.selector.isAccountDeletionRequestPending();
+                this.isRequestSuccess = this.selector.isAccountDeletionRequestSuccess();
+                this.isRequestFailure = this.selector.isAccountDeletionRequestFailure();
+            });
         }
     }
 </script>
@@ -27,43 +53,16 @@
         height: 100%;
     }
 
-    .account-deletion__main > *:not(:last-child) {
-        margin-bottom: 2rem;
+    .account-deletion__main {
+        text-align: center;
     }
 
-    .account-deletion__title {
-        padding: 1rem 2rem;
-        color: var(--color-black);
-        border-bottom: 1px solid var(--color-black);
-        font-size: 1.8rem;
-        font-weight: 600;
+    .account-deletion__main > *:not(:last-child) {
+        margin-bottom: 2rem;
     }
 
     .account-deletion__paragraph {
         color: var(--color-black);
         font-size: 1.4rem;
-    }
-
-    .account-deletion__button {
-        color: var(--color-white);
-        padding: 1rem 3rem;
-        font-size: 1.6rem;
-        border: 1px solid var(--color-white);
-        background-color: var(--color-primary);
-        transition: color .4s, border .4s, background-color .4s;
-        cursor: pointer;
-    }
-
-    .account-deletion__button:hover {
-        color: var(--color-white);
-        border: 1px solid var(--color-black);
-        background-color: var(--color-black);
-    }
-
-    .account-deletion__button:disabled {
-        color: var(--color-black);
-        border: 1px solid var(--color-black);
-        background-color: var(--color-white);
-        cursor: initial;
     }
 </style>
