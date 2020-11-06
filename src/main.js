@@ -3,7 +3,7 @@ import { createApp } from 'vue'
 import { createCore } from "./core/main";
 import { createServices } from "./services/main";
 import { createState, createMessageDispatcher, createSelector } from "./state/main";
-import { sendRequest } from "./tools/sendRequest";
+import { sendRequest } from "./tools/httpClient";
 import { createDispatcherToPresenterAdapter } from "./tools/dispatcherToPresenterAdapter";
 import { start, retrieve, exist } from "./tools/session";
 

@@ -1,47 +1,43 @@
 <template>
-    <component v-if="hasRoute" :is="componentToRender"></component>
+    <component v-if="hasRoute" :is="componentToRender" v-bind="props"></component>
 </template>
 
 <script>
-    import Landing from "../../pages/landing/index"
-
     export default {
+        props: ["routes"],
         data() {
-            return {
-                currentRoute: { component: Landing, path: "/" },
-                hasRoute: false
-            }
+            return { currentRoute: "" }
         },
         computed: {
             componentToRender() {
-                return this.currentRoute.component;
+                const currentRoute = this.matchRoute();
+
+                return currentRoute && currentRoute.component;
+            },
+            props() {
+                const currentRoute = this.matchRoute();
+
+                console.log(this.currentRoute, currentRoute);
+
+                return currentRoute && currentRoute.props;
             }
         },
         methods: {
-            getRoutes() {
-                return this.selector.hasSession() ?
-                    [
-                        { component: Landing, path: "/" }
-                    ] :
-                    [
-                        { component: Landing, path: "/" }
-                    ]
+            hasRoute() {
+                return !!this.matchRoute()
             },
             updateRoute() {
-                const currentRoute = this.getRoutes().find(({ path }) => new RegExp(path).test(this.selector.getCurrentLocation()));
-
-                this.currentRoute = currentRoute;
-                this.hasRoute = !!currentRoute;
-            }
-        },
-        watch: {
-            currentRoute(nextRoute) {
-                this.hasRoute && history.pushState(null, null, nextRoute.path);
+                this.currentRoute = this.selector.getCurrentLocation();
+            },
+            matchRoute() {
+                return this.routes.find(({ path }) => new RegExp(path).test(this.currentRoute))
             }
         },
         created() {
             this.subscribeToStore(this.updateRoute);
             this.updateRoute();
+
+            window.onpopstate = () => this.messageDispatcher.dispatchLocationChange(location.pathname)
         }
     };
 </script>
