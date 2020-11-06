@@ -11,7 +11,9 @@
     import Loader from "./components/loader";
     import Router from "./components/router";
     import Landing from "./pages/landing";
-    import Dashboard from "./pages/dashboard";
+    import GeneralManagerDashboard from "./pages/generalManagerDashboard";
+    import ManagerDashboard from "./pages/managerDashboard";
+    import EmployeeDashboard from "./pages/employeeDashboard";
 
     export default {
         components: { Loader, Router },
@@ -25,8 +27,14 @@
             routes() {
                 return this.isAuthenticated ?
                     [
-                        { component: Landing, path: "/test" },
-                        { component: Dashboard, path: "/" }
+                        {
+                            component: this.session.role.isGeneralManager ?
+                                GeneralManagerDashboard :
+                                this.session.role.isManager ?
+                                    ManagerDashboard :
+                                    EmployeeDashboard,
+                            path: "/"
+                        }
                     ] :
                     [
                         { component: Landing, path: "/" }
@@ -37,6 +45,7 @@
             this.subscribeToStore(() => {
                 this.canRenderApp = !this.selector.isSessionDecodeRequestPending();
                 this.isAuthenticated = this.selector.hasSession();
+                this.session = this.selector.getSession();
             });
         },
         created() {

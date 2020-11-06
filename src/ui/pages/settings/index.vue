@@ -22,8 +22,8 @@
 </template>
 
 <script>
-    import AccountEdition from "../../../components/accountEdition";
-    import AccountDeletion from "../../../components/accountDeletion";
+    import AccountEdition from "../../components/accountEdition/index";
+    import AccountDeletion from "../../components/accountDeletion/index";
 
     export default {
         components: {AccountEdition, AccountDeletion},
