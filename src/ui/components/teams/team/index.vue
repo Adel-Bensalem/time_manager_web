@@ -3,7 +3,7 @@
         <h3 class="team__title">{{ team.name }}</h3>
         <p class="team__paragraph">This team contains <span class="team__paragraph__number">{{ team.members.length }}</span> members<span v-if="hasManagers"> and <span class="team__paragraph__number">{{ managers.length }}</span> managers</span>.</p>
         <div class="team__button">
-            <Button>See more</Button>
+            <Button @click="clickTeam">See more</Button>
         </div>
     </div>
 </template>
@@ -13,6 +13,7 @@
 
     export default {
         props: ["team"],
+        emits: ["click-team"],
         components: { Button },
         computed: {
             managers() {
@@ -20,6 +21,11 @@
             },
             hasManagers() {
                 return this.managers.length > 0;
+            }
+        },
+        methods: {
+            clickTeam() {
+                this.$emit("click-team", this.team);
             }
         }
     }
