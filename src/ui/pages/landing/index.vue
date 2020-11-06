@@ -78,11 +78,7 @@
         flex-direction: row;
         flex-wrap: wrap;
         width: 100%;
-        padding: 4rem;
-    }
-
-    .landing > *:not(:last-child) {
-        margin-right: 2rem;
+        padding: 2rem;
     }
 
     .landing__title {
@@ -96,6 +92,7 @@
 
     .landing__section {
         flex: 1;
+        padding: 2rem;
     }
 
     .landing__form {
