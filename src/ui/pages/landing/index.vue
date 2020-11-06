@@ -1,22 +1,29 @@
 <template>
     <div class="landing">
-        <div class="landing__form">
-            <AccountCreation
-                    :form-data="registrationFormData"
-                    :request="registrationRequestState"
-                    :can-submit-form="canRegister"
-                    @create-account="core.createAccount"
-                    @edit-account-creation-form="core.editAccountCreationForm"
-            />
+        <div class="landing__section">
+            <div class="landing__form">
+                <h1 class="landing__title">Register</h1>
+                <AccountCreation
+                        :form-data="registrationFormData"
+                        :request="registrationRequestState"
+                        :can-submit-form="canRegister"
+                        @create-account="core.createAccount"
+                        @edit-account-creation-form="core.editAccountCreationForm"
+                />
+            </div>
         </div>
-        <div class="landing__form">
-            <Authentication
-                    :data="authenticationFormData"
-                    :can-authenticate="canAuthenticate"
-                    :request="authenticationRequestState"
-                    @edit-authentication-form="core.editAuthenticationForm"
-                    @authenticate="core.authenticate"
-            />
+        <div class="landing__section">
+            <div class="landing__form">
+                <h1 class="landing__title">Log In</h1>
+                <Authentication
+                        :data="authenticationFormData"
+                        :can-authenticate="canAuthenticate"
+                        :request="authenticationRequestState"
+                        @edit-authentication-form="core.editAuthenticationForm"
+                        @authenticate="core.authenticate"
+                />
+            </div>
+
         </div>
     </div>
 </template>
@@ -70,13 +77,26 @@
         justify-content: center;
         flex-direction: row;
         width: 100%;
+        padding: 4rem;
     }
 
     .landing > *:not(:last-child) {
         margin-right: 2rem;
     }
 
-    .landing__form {
+    .landing__title {
+        font-size: 1.8rem;
+        color: var(--color-black);
+        font-weight: 600;
+        margin-bottom: 2rem;
+    }
+
+    .landing__section {
         flex: 1;
+    }
+
+    .landing__form {
+        margin: 0 auto;
+        max-width: 40rem;
     }
 </style>

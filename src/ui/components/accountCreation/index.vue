@@ -56,7 +56,6 @@
     }
 
     .account-creation__form {
-        max-width: 40rem;
         width: 100%;
         margin-bottom: 2rem;
     }

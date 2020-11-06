@@ -60,7 +60,6 @@
     .authentication__form {
         display: flex;
         flex-direction: column;
-        max-width: 40rem;
         width: 100%;
         margin-bottom: 2rem;
     }
