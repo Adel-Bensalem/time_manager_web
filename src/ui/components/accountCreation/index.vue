@@ -1,12 +1,12 @@
 <template>
     <div class="account-creation">
         <div class="account-creation__form">
-            <account-creation-form :data="formData" @edit-form="editGeneralManagerAccountCreationForm" />
+            <account-creation-form :data="formData" @edit-form="editAccountCreationForm" />
         </div>
         <button
                 class="account-creation__button"
                 :disabled="!canSubmitForm"
-                @click="createGeneralManagerAccount"
+                @click="createAccount"
         >
             Send
         </button>
@@ -17,10 +17,10 @@
     import Form from "./form";
 
     export default {
-        name: "GeneralManagerAccountCreation",
+        name: "AccountCreation",
         emits: [
-            "edit-general-manager-account-creation-form",
-            "create-general-manager-account",
+            "edit-account-creation-form",
+            "create-account",
         ],
         props: {
             formData: {
@@ -38,11 +38,11 @@
         },
         components: { 'account-creation-form': Form },
         methods: {
-            editGeneralManagerAccountCreationForm(formData) {
-                this.$emit("edit-general-manager-account-creation-form", formData);
+            editAccountCreationForm(formData) {
+                this.$emit("edit-account-creation-form", formData);
             },
-            createGeneralManagerAccount() {
-                this.$emit("create-general-manager-account", this.formData);
+            createAccount() {
+                this.$emit("create-account", this.formData);
             }
         }
     }

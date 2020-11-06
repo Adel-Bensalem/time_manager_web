@@ -1,12 +1,12 @@
 <template>
     <div class="landing">
         <div class="landing__form">
-            <GeneralManagerAccountCreation
+            <AccountCreation
                     :form-data="registrationFormData"
                     :request="registrationRequestState"
                     :can-submit-form="canRegister"
-                    @create-general-manager-account="core.createGeneralManagerAccount"
-                    @edit-general-manager-account-creation-form="core.editGeneralManagerAccountCreationForm"
+                    @create-account="core.createAccount"
+                    @edit-account-creation-form="core.editAccountCreationForm"
             />
         </div>
         <div class="landing__form">
@@ -21,21 +21,21 @@
     </div>
 </template>
 <script>
-    import GeneralManagerAccountCreation from "../../components/generalManagerAccountCreation";
+    import AccountCreation from "../../components/accountCreation";
     import Authentication from "../../components/authentication";
 
     export default {
-        components: {GeneralManagerAccountCreation, Authentication},
+        components: {AccountCreation, Authentication},
         data() {
             return {
-                registrationFormData: this.selector.getGeneralManagerAccountCreationFormData(),
+                registrationFormData: this.selector.getAccountCreationFormData(),
                 authenticationFormData: this.selector.getAuthenticationFormEditionFormData(),
-                canRegister: this.selector.canSubmitGeneralManagerAccountCreationForm(),
+                canRegister: this.selector.canSubmitAccountCreationForm(),
                 canAuthenticate: this.selector.canSubmitAuthenticationFormEditionForm(),
                 registrationRequestState: {
-                    isPending: this.selector.isGeneralManagerAccountCreationRequestPending(),
-                    isSuccess: this.selector.isGeneralManagerAccountCreationRequestSuccess(),
-                    isFailure: this.selector.isGeneralManagerAccountCreationRequestFailure(),
+                    isPending: this.selector.isAccountCreationRequestPending(),
+                    isSuccess: this.selector.isAccountCreationRequestSuccess(),
+                    isFailure: this.selector.isAccountCreationRequestFailure(),
                 },
                 authenticationRequestState: {
                     isPending: this.selector.isAuthenticationRequestPending(),
@@ -46,12 +46,12 @@
         },
         beforeCreate() {
             this.subscribeToStore(() => {
-                this.registrationFormData = this.selector.getGeneralManagerAccountCreationFormData();
-                this.canRegister = this.selector.canSubmitGeneralManagerAccountCreationForm();
+                this.registrationFormData = this.selector.getAccountCreationFormData();
+                this.canRegister = this.selector.canSubmitAccountCreationForm();
                 this.registrationRequestState = {
-                    isPending: this.selector.isGeneralManagerAccountCreationRequestPending(),
-                    isSuccess: this.selector.isGeneralManagerAccountCreationRequestSuccess(),
-                    isFailure: this.selector.isGeneralManagerAccountCreationRequestFailure(),
+                    isPending: this.selector.isAccountCreationRequestPending(),
+                    isSuccess: this.selector.isAccountCreationRequestSuccess(),
+                    isFailure: this.selector.isAccountCreationRequestFailure(),
                 };
                 this.authenticationFormData = this.selector.getAuthenticationFormEditionFormData();
                 this.canAuthenticate = this.selector.canSubmitAuthenticationFormEditionForm();

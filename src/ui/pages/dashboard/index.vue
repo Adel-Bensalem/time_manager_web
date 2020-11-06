@@ -12,17 +12,16 @@
 
 <script>
     import 'vue/dist/vue.esm-bundler.js';
-    import Link from "../../components/link";
-    import Router from "../../components/router";
     import Navigation from "./navigation";
     import TabBar from "./tabBar";
+    import Settings from "./settings";
 
     import clockIcon from "../../assets/clock.svg";
     import settingsIcon from "../../assets/settings.svg";
     import teamIcon from "../../assets/team.svg";
 
     export default {
-        components: { Link, Router, Navigation, TabBar },
+        components: { Settings, Navigation, TabBar },
         data() {
             return {
                 x: 0,
@@ -99,9 +98,7 @@
                         components: [
                             {
                                 name: "Team list",
-                                component: {
-                                    template: "<h1>TEST 3</h1>"
-                                }
+                                component: Settings
                             }
                         ]
                     },
