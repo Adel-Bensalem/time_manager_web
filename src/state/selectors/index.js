@@ -46,6 +46,11 @@ import {
     isTeamsRetrievalRequestFailure,
     getTeams
 } from "./retrieveTeams";
+import {
+    isEmployeeAdditionRequestPending,
+    isEmployeeAdditionRequestSuccess,
+    isEmployeeAdditionRequestFailure
+} from "./addEmployee";
 import {hasSession, getSession} from "./session";
 import {getCurrentLocation} from "./location";
 
@@ -136,6 +141,15 @@ function createSelector(getState) {
             () => getState().teamsRetrieval
         ),
         getTeams: getTeams(() => getState().teamsRetrieval),
+        isEmployeeAdditionRequestPending: isEmployeeAdditionRequestPending(
+            () => getState().employeeAddition
+        ),
+        isEmployeeAdditionRequestSuccess: isEmployeeAdditionRequestSuccess(
+            () => getState().employeeAddition
+        ),
+        isEmployeeAdditionRequestFailure: isEmployeeAdditionRequestFailure(
+            () => getState().employeeAddition
+        ),
     }
 }
 

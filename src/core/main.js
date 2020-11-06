@@ -1,12 +1,13 @@
-import { createAccount } from "./useCases/createAccount"
-import { editAccountCreationForm } from "./useCases/editAccountCreationForm"
-import { authenticate } from "./useCases/authenticate"
-import { editAuthenticationForm } from "./useCases/editAuthenticationForm"
-import { decodeSession } from "./useCases/decodeSession"
-import { deleteAccount } from "./useCases/deleteAccount"
-import { editAccount } from "./useCases/editAccount"
-import { editAccountEditionForm } from "./useCases/editAccountEditionForm"
-import { createTeam } from "./useCases/createTeam"
+import { createAccount } from "./useCases/createAccount";
+import { editAccountCreationForm } from "./useCases/editAccountCreationForm";
+import { authenticate } from "./useCases/authenticate";
+import { editAuthenticationForm } from "./useCases/editAuthenticationForm";
+import { decodeSession } from "./useCases/decodeSession";
+import { deleteAccount } from "./useCases/deleteAccount";
+import { editAccount } from "./useCases/editAccount";
+import { editAccountEditionForm } from "./useCases/editAccountEditionForm";
+import { createTeam } from "./useCases/createTeam";
+import { addEmployee } from "./useCases/addEmployee";
 
 function createCore(
     repository,
@@ -24,7 +25,8 @@ function createCore(
         deleteAccount: deleteAccount(repository, session, presenter),
         editAccount: editAccount(repository, presenter),
         editAccountEditionForm: editAccountEditionForm(presenter),
-        createTeam: createTeam(repository, session, presenter)
+        createTeam: createTeam(repository, session, presenter),
+        addEmployee: addEmployee(repository, session, presenter),
     }
 }
 

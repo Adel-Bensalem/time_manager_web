@@ -80,6 +80,14 @@ import {
     dispatchTeamsRetrievalSuccess,
     dispatchTeamsRetrievalFailure
 } from "./retrieveTeams";
+import {
+    EMPLOYEE_ADDITION_REQUESTED,
+    EMPLOYEE_ADDITION_SUCCEEDED,
+    EMPLOYEE_ADDITION_FAILED,
+    dispatchEmployeeAdditionRequest,
+    dispatchEmployeeAdditionSuccess,
+    dispatchEmployeeAdditionFailure
+} from "./addEmployee";
 
 const messages = {
     ACCOUNT_CREATION_REQUESTED,
@@ -112,6 +120,9 @@ const messages = {
     TEAMS_RETRIEVAL_REQUESTED,
     TEAMS_RETRIEVAL_SUCCEEDED,
     TEAMS_RETRIEVAL_FAILED,
+    EMPLOYEE_ADDITION_REQUESTED,
+    EMPLOYEE_ADDITION_SUCCEEDED,
+    EMPLOYEE_ADDITION_FAILED,
 };
 
 function createMessageDispatcher(dispatch) {
@@ -146,6 +157,9 @@ function createMessageDispatcher(dispatch) {
         dispatchTeamsRetrievalRequest: dispatchTeamsRetrievalRequest(dispatch),
         dispatchTeamsRetrievalSuccess: dispatchTeamsRetrievalSuccess(dispatch),
         dispatchTeamsRetrievalFailure: dispatchTeamsRetrievalFailure(dispatch),
+        dispatchEmployeeAdditionRequest: dispatchEmployeeAdditionRequest(dispatch),
+        dispatchEmployeeAdditionSuccess: dispatchEmployeeAdditionSuccess(dispatch),
+        dispatchEmployeeAdditionFailure: dispatchEmployeeAdditionFailure(dispatch),
     }
 }
 

@@ -4,6 +4,7 @@ import { deleteAccount } from "./api/deleteAccount";
 import { authenticate, decodeToken } from "./api/authenticate";
 import { saveTeam } from "./api/saveTeam";
 import { getTeams } from "./api/getTeams";
+import { saveEmployee } from "./api/saveEmployee";
 
 function createServices(sendHttpRequest) {
     return {
@@ -13,7 +14,8 @@ function createServices(sendHttpRequest) {
         deleteAccount: deleteAccount(sendHttpRequest),
         editAccount: editAccount(sendHttpRequest),
         saveTeam: saveTeam(sendHttpRequest),
-        getTeams: getTeams(sendHttpRequest)
+        getTeams: getTeams(sendHttpRequest),
+        saveEmployee: saveEmployee(sendHttpRequest),
     }
 }
 

@@ -63,4 +63,17 @@ router.get(
     ])
 );
 
+router.post(
+    "/employee",
+    (req, res) => res.status(200).send({
+        fullName: "John Doe",
+        email: "john.doe@test.test",
+        role: {
+            isGeneralManager: false,
+            isManager: req.body.employee.role.isManager,
+            isEmployee: !req.body.employee.role.isManager
+        }
+    })
+);
+
 module.exports = router;
