@@ -51,6 +51,10 @@ import {
     isEmployeeAdditionRequestSuccess,
     isEmployeeAdditionRequestFailure
 } from "./addEmployee";
+import {
+    getEmployeeAdditionFormEditionFormData,
+    canSubmitEmployeeAdditionFormEditionForm
+} from "./editEmployeeAdditionForm";
 import {hasSession, getSession} from "./session";
 import {getCurrentLocation} from "./location";
 
@@ -149,6 +153,12 @@ function createSelector(getState) {
         ),
         isEmployeeAdditionRequestFailure: isEmployeeAdditionRequestFailure(
             () => getState().employeeAddition
+        ),
+        getEmployeeAdditionFormEditionFormData: getEmployeeAdditionFormEditionFormData(
+            () => getState().employeeAdditionFormEdition
+        ),
+        canSubmitEmployeeAdditionFormEditionForm: canSubmitEmployeeAdditionFormEditionForm(
+            () => getState().employeeAdditionFormEdition
         ),
     }
 }

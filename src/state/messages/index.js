@@ -88,6 +88,12 @@ import {
     dispatchEmployeeAdditionSuccess,
     dispatchEmployeeAdditionFailure
 } from "./addEmployee";
+import {
+    EMPLOYEE_ADDITION_FORM_EDITION_SUCCEEDED,
+    EMPLOYEE_ADDITION_FORM_EDITION_FAILED,
+    dispatchEmployeeAdditionFormEditionSuccess,
+    dispatchEmployeeAdditionFormEditionFailure
+} from "./editEmployeeAdditionForm";
 
 const messages = {
     ACCOUNT_CREATION_REQUESTED,
@@ -123,6 +129,8 @@ const messages = {
     EMPLOYEE_ADDITION_REQUESTED,
     EMPLOYEE_ADDITION_SUCCEEDED,
     EMPLOYEE_ADDITION_FAILED,
+    EMPLOYEE_ADDITION_FORM_EDITION_SUCCEEDED,
+    EMPLOYEE_ADDITION_FORM_EDITION_FAILED,
 };
 
 function createMessageDispatcher(dispatch) {
@@ -160,6 +168,8 @@ function createMessageDispatcher(dispatch) {
         dispatchEmployeeAdditionRequest: dispatchEmployeeAdditionRequest(dispatch),
         dispatchEmployeeAdditionSuccess: dispatchEmployeeAdditionSuccess(dispatch),
         dispatchEmployeeAdditionFailure: dispatchEmployeeAdditionFailure(dispatch),
+        dispatchEmployeeAdditionFormEditionSuccess: dispatchEmployeeAdditionFormEditionSuccess(dispatch),
+        dispatchEmployeeAdditionFormEditionFailure: dispatchEmployeeAdditionFormEditionFailure(dispatch),
     }
 }
 

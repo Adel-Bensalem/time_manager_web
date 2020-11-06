@@ -8,6 +8,7 @@ import { editAccount } from "./useCases/editAccount";
 import { editAccountEditionForm } from "./useCases/editAccountEditionForm";
 import { createTeam } from "./useCases/createTeam";
 import { addEmployee } from "./useCases/addEmployee";
+import { editEmployeeAdditionForm } from "./useCases/editEmployeeAdditionForm";
 
 function createCore(
     repository,
@@ -27,6 +28,7 @@ function createCore(
         editAccountEditionForm: editAccountEditionForm(presenter),
         createTeam: createTeam(repository, session, presenter),
         addEmployee: addEmployee(repository, session, presenter),
+        editEmployeeAdditionForm: editEmployeeAdditionForm(presenter)
     }
 }
 

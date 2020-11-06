@@ -70,8 +70,8 @@ router.post(
         email: "john.doe@test.test",
         role: {
             isGeneralManager: false,
-            isManager: req.body.employee.role.isManager,
-            isEmployee: !req.body.employee.role.isManager
+            isManager: req.body.employee.isManager,
+            isEmployee: !req.body.employee.isManager
         }
     })
 );

@@ -11,6 +11,8 @@ import { reduceAccountEditionState } from "./editAccount";
 import { reduceAccountEditionFormEditionState } from "./editAccountEditionForm";
 import { reduceTeamCreationState } from "./createTeam";
 import { reduceTeamsRetrievalState } from "./retrieveTeams";
+import { reduceEmployeeAdditionState } from "./addEmployee";
+import { reduceEmployeeAdditionFormFormEditionState } from "./editEmployeeAdditionForm";
 
 const reduceState = combineReducers({
     accountCreation: reduceAccountCreationState,
@@ -24,7 +26,9 @@ const reduceState = combineReducers({
     accountEdition: reduceAccountEditionState,
     accountEditionFormEdition: reduceAccountEditionFormEditionState,
     teamCreation: reduceTeamCreationState,
-    teamsRetrieval: reduceTeamsRetrievalState
+    teamsRetrieval: reduceTeamsRetrievalState,
+    employeeAddition: reduceEmployeeAdditionState,
+    employeeAdditionFormEdition: reduceEmployeeAdditionFormFormEditionState
 });
 
 export { reduceState };
