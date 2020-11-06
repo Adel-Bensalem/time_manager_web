@@ -55,6 +55,11 @@ import {
     getEmployeeAdditionFormEditionFormData,
     canSubmitEmployeeAdditionFormEditionForm
 } from "./editEmployeeAdditionForm";
+import {
+    isArrivalTimeReportRequestPending,
+    isArrivalTimeReportRequestSuccess,
+    isArrivalTimeReportRequestFailure,
+} from "./reportArrivalTime";
 import {hasSession, getSession} from "./session";
 import {getCurrentLocation} from "./location";
 
@@ -159,6 +164,15 @@ function createSelector(getState) {
         ),
         canSubmitEmployeeAdditionFormEditionForm: canSubmitEmployeeAdditionFormEditionForm(
             () => getState().employeeAdditionFormEdition
+        ),
+        isArrivalTimeReportRequestPending: isArrivalTimeReportRequestPending(
+            () => getState().arrivalTimeReport
+        ),
+        isArrivalTimeReportRequestSuccess: isArrivalTimeReportRequestSuccess(
+            () => getState().arrivalTimeReport
+        ),
+        isArrivalTimeReportRequestFailure: isArrivalTimeReportRequestFailure(
+            () => getState().arrivalTimeReport
         ),
     }
 }

@@ -5,6 +5,7 @@ import { authenticate, decodeToken } from "./api/authenticate";
 import { saveTeam } from "./api/saveTeam";
 import { getTeams } from "./api/getTeams";
 import { saveEmployee } from "./api/saveEmployee";
+import { saveArrivalTime } from "./api/saveArrivalTime";
 
 function createServices(sendHttpRequest) {
     return {
@@ -16,6 +17,7 @@ function createServices(sendHttpRequest) {
         saveTeam: saveTeam(sendHttpRequest),
         getTeams: getTeams(sendHttpRequest),
         saveEmployee: saveEmployee(sendHttpRequest),
+        saveArrivalTime: saveArrivalTime(sendHttpRequest),
     }
 }
 

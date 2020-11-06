@@ -76,4 +76,9 @@ router.post(
     })
 );
 
+router.post(
+    "/clocks",
+    (req, res) => res.status(200).send("01/01/2020 00:00:00")
+);
+
 module.exports = router;

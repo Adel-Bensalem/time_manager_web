@@ -94,6 +94,14 @@ import {
     dispatchEmployeeAdditionFormEditionSuccess,
     dispatchEmployeeAdditionFormEditionFailure
 } from "./editEmployeeAdditionForm";
+import {
+    ARRIVAL_TIME_REPORT_REQUESTED,
+    ARRIVAL_TIME_REPORT_SUCCEEDED,
+    ARRIVAL_TIME_REPORT_FAILED,
+    dispatchArrivalTimeReportRequest,
+    dispatchArrivalTimeReportSuccess,
+    dispatchArrivalTimeReportFailure
+} from "./reportArrivalTime";
 
 const messages = {
     ACCOUNT_CREATION_REQUESTED,
@@ -131,6 +139,9 @@ const messages = {
     EMPLOYEE_ADDITION_FAILED,
     EMPLOYEE_ADDITION_FORM_EDITION_SUCCEEDED,
     EMPLOYEE_ADDITION_FORM_EDITION_FAILED,
+    ARRIVAL_TIME_REPORT_REQUESTED,
+    ARRIVAL_TIME_REPORT_SUCCEEDED,
+    ARRIVAL_TIME_REPORT_FAILED,
 };
 
 function createMessageDispatcher(dispatch) {
@@ -170,6 +181,9 @@ function createMessageDispatcher(dispatch) {
         dispatchEmployeeAdditionFailure: dispatchEmployeeAdditionFailure(dispatch),
         dispatchEmployeeAdditionFormEditionSuccess: dispatchEmployeeAdditionFormEditionSuccess(dispatch),
         dispatchEmployeeAdditionFormEditionFailure: dispatchEmployeeAdditionFormEditionFailure(dispatch),
+        dispatchArrivalTimeReportRequest: dispatchArrivalTimeReportRequest(dispatch),
+        dispatchArrivalTimeReportSuccess: dispatchArrivalTimeReportSuccess(dispatch),
+        dispatchArrivalTimeReportFailure: dispatchArrivalTimeReportFailure(dispatch),
     }
 }
 

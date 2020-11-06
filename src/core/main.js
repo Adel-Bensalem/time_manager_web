@@ -9,13 +9,14 @@ import { editAccountEditionForm } from "./useCases/editAccountEditionForm";
 import { createTeam } from "./useCases/createTeam";
 import { addEmployee } from "./useCases/addEmployee";
 import { editEmployeeAdditionForm } from "./useCases/editEmployeeAdditionForm";
+import { reportArrivalTime } from "./useCases/reportArrivalTime";
 
 function createCore(
     repository,
     presenter,
     gatekeeper,
     session,
-    tokenDecoder
+    tokenDecoder,
 ) {
     return {
         createAccount: createAccount(repository, presenter),
@@ -28,7 +29,8 @@ function createCore(
         editAccountEditionForm: editAccountEditionForm(presenter),
         createTeam: createTeam(repository, session, presenter),
         addEmployee: addEmployee(repository, session, presenter),
-        editEmployeeAdditionForm: editEmployeeAdditionForm(presenter)
+        editEmployeeAdditionForm: editEmployeeAdditionForm(presenter),
+        reportArrivalTime: reportArrivalTime(repository, session, presenter),
     }
 }
 
